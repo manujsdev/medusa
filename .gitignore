@@ -22,3 +22,6 @@ www/**/.yarn/*
 build/**
 **/dist
 **/stats
+
+.cache
+packages/**/build/*

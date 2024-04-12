@@ -73,3 +73,35 @@ Join our [Discord server](https://discord.com/invite/medusajs) to meet other com
 ## License
 
 Licensed under the [MIT License](https://github.com/medusajs/medusa/blob/develop/LICENSE).
+
+## Steps to Edit Admin
+
+### Prerequisites:
+
+1. Use Node.js v18.17.1 (higher or equal to version 18.18 may cause errors, you need to test it yourself)
+
+2. Use released package instead of working on the develop branch (but this is optional, again you can test it yourself)
+
+3. A Medusa backend (API) is already running (since you are deploying admin separately, you should remove the admin section from medusa-config.js and package.json in your backend (API) )
+
+Get Started:
+
+1. Assume you have forked [Medusa](https://github.com/medusajs/medusa) and created a branch (you can also clone it locally if you prefer)
+
+2. Run yarn and yarn build in the root directory
+
+3. Go to packages/admin-ui run yarn dev and start your customization, you can see your changes promptly in the browser (admin-ui listens to localhost:9000 by default, you can either run a backend locally or go to packages/admin-ui/webpack.config.dev.ts#L18 and change it to your API service url)
+
+4. Once you are done customizing and ready to deploy, run yarn build
+
+5. Create .env file under packages/admin:
+
+MEDUSA_ADMIN_BACKEND_URL=http://localhost:9000 # or your API service url
+
+6. Copy file medusa-config.js to packages/admin
+
+7. Add "build:admin": "medusa-admin build --deployment" to packages/admin/package.json scripts section
+
+8. Run yarn build:admin
+
+9. Deploy the static files under packages/admin/build to Cloudflare Pages or wherever you want

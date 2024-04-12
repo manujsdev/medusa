@@ -34,7 +34,7 @@ const getDevServerConfig = () => {
     ...devConfig,
     ...{
       devServer: {
-        port: 7001,
+        port: 7000,
         hot: true,
         historyApiFallback: true,
         client: {
@@ -46,7 +46,7 @@ const getDevServerConfig = () => {
         },
         open: false,
         onListening: function () {
-          openBrowser(`http://localhost:7001`)
+          openBrowser(`http://localhost:7000`)
         },
         allowedHosts: "auto",
       } as Configuration,
