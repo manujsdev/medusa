@@ -50,12 +50,14 @@ import {
 } from "../../../utils/search-param-utils"
 import { PriceListStatus } from "../forms/price-list-details-form"
 import { PriceListNew } from "../new"
+import { useTranslation } from "react-i18next"
 
 const PAGE_SIZE = 10
 const TABLE_HEIGHT = (PAGE_SIZE + 1) * 48
 
 const PriceListTableFilters = () => {
   const navigate = useNavigate()
+  const { t } = useTranslation()
   const [searchParams] = useSearchParams()
 
   const onStatusChange = (status: string[]) => {
@@ -111,7 +113,7 @@ const PriceListTableFilters = () => {
         />
         <FilterMenu.Seperator />
         <FilterMenu.DateItem
-          name="Created at"
+          name={t("price-list-product-filter-created-at", "Created at")}
           value={getDateComparisonOperatorFromSearchParams(
             "created_at",
             searchParams
@@ -120,7 +122,7 @@ const PriceListTableFilters = () => {
         />
         <FilterMenu.Seperator />
         <FilterMenu.DateItem
-          name="Updated at"
+          name={t("price-list-product-filter-updated-at", "Updated at")}
           value={getDateComparisonOperatorFromSearchParams(
             "updated_at",
             searchParams
@@ -215,7 +217,7 @@ const PriceListOverview = () => {
           )
         })}
         <Container className="overflow-hidden p-0">
-          <div className="flex items-center justify-between px-8 pt-6 pb-4">
+          <div className="flex items-center justify-between px-8 pb-4 pt-6">
             <Heading>Price Lists</Heading>
             <div className="flex items-center gap-x-2">
               <PriceListTableFilters />
@@ -242,7 +244,7 @@ const PriceListOverview = () => {
                   return (
                     <Table.Row
                       key={headerGroup.id}
-                      className="[&_th]:w-1/5 [&_th:last-of-type]:w-[1%]"
+                      className="[&_th:last-of-type]:w-[1%] [&_th]:w-1/5"
                     >
                       {headerGroup.headers.map((header) => {
                         return (

@@ -92,7 +92,7 @@ const LoginCard = ({ toResetPassword }: LoginCardProps) => {
             type="submit"
             loading={isLoading}
           >
-            Continue
+            {t("login-card-continue", "Continue")}
           </Button>
           <span
             className="inter-small-regular text-grey-50 mt-8 cursor-pointer"
