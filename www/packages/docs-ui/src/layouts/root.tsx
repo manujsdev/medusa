@@ -23,7 +23,7 @@ export const RootLayout = ({
   mainWrapperClasses,
 }: RootLayoutProps) => {
   return (
-    <html lang="en" className={clsx("h-full w-full", htmlClassName)}>
+    <html lang="es" className={clsx("h-full w-full", htmlClassName)}>
       <head />
       <body
         className={clsx(
@@ -36,7 +36,7 @@ export const RootLayout = ({
         <ProvidersComponent>
           <NavbarComponent />
           <div
-            className="w-full h-[calc(100%-57px)] overflow-y-scroll overflow-x-hidden"
+            className="h-[calc(100%-57px)] w-full overflow-x-hidden overflow-y-scroll"
             id="main"
           >
             <div className={clsx("max-w-xxl w-full", mainWrapperClasses)}>
