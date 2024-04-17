@@ -4,12 +4,14 @@ import { useLocation } from "react-router-dom"
 import OSShortcut from "../atoms/os-shortcut"
 import SearchIcon from "../fundamentals/icons/search-icon"
 import SearchModal from "../templates/search-modal"
+import { useTranslation } from "react-i18next"
 
 const SearchBar: React.FC = () => {
   const [showSearchModal, setShowSearchModal] = useState(false)
   const location = useLocation()
+  const { t } = useTranslation()
 
-  const toggleSearch = (e) => {
+  const toggleSearch = (e: any) => {
     e.preventDefault()
     e.stopPropagation()
     setShowSearchModal((show) => !show)
@@ -38,7 +40,7 @@ const SearchBar: React.FC = () => {
           <OSShortcut macModifiers="⌘" winModifiers="Ctrl" keys="K" />
         </div>
         <span className="ml-xsmall text-grey-40 inter-base-regular">
-          Search anything...
+          {t("search", "Search")}
         </span>
       </button>
       {showSearchModal && <SearchModal handleClose={closeModal} />}

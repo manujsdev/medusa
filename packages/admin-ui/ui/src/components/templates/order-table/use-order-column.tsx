@@ -45,6 +45,51 @@ const useOrderTableColums = () => {
     }
   }
 
+  const decideFulfilled = (status) => {
+    console.log("the status: ", status)
+    switch (status) {
+      case "fulfilled":
+        return (
+          <StatusDot
+            variant="success"
+            title={t("order-table-fulfilled", "Fulfilled")}
+          />
+        )
+      case "shipped":
+        return (
+          <StatusDot
+            variant="primary"
+            title={t("order-table-shipped", "Shipped")}
+          />
+        )
+      case "awaiting":
+        return (
+          <StatusDot
+            variant="default"
+            title={t("order-table-awaiting", "Awaiting")}
+          />
+        )
+      case "not_fulfilled":
+        return (
+          <StatusDot
+            variant="danger"
+            title={t("order-table-notFulfilled", "Awaiting fulfillment")}
+          />
+        )
+      case "canceled":
+        return (
+          <StatusDot
+            variant="warning"
+            title={t("order-table-canceled", "Canceled")}
+          />
+        )
+      default:
+        return (
+          <StatusDot variant="primary" title={t("order-table-n-a", "N/A")} />
+        )
+    }
+  }
+
   const columns = useMemo(
     () => [
       {
@@ -87,7 +132,7 @@ const useOrderTableColums = () => {
       {
         Header: t("order-table-fulfillment", "Fulfillment"),
         accessor: "fulfillment_status",
-        Cell: ({ cell: { value } }) => value,
+        Cell: ({ cell: { value } }) => decideFulfilled(value),
       },
       {
         Header: t("order-table-payment-status", "Payment status"),

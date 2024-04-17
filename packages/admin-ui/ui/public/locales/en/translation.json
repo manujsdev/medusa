@@ -1,4 +1,5 @@
 {
+  "search": "Search",
   "back-button-go-back": "Go back",
   "filter-menu-trigger": "View",
   "filter-menu-clear-button": "Clear",
@@ -446,6 +447,16 @@
   "order-table-awaiting": "Awaiting",
   "order-table-requires-action": "Requires action",
   "order-table-canceled": "Canceled",
+
+  "order-table-notFulfilled": "Awaiting fulfillment",
+  "order-table-partiallyFulfilled": "Partially fulfilled",
+  "order-table-fulfilled": "Fulfilled",
+  "order-table-partiallyShipped": "Partially shipped",
+  "order-table-shipped": "Shipped",
+  "order-table-partiallyReturned": "Partially returned",
+  "order-table-returned": "Returned",
+  "order-table-requiresAction": "Requires action",
+
   "order-table-n-a": "N/A",
   "order-table-order": "Order",
   "order-table-date-added": "Date added",

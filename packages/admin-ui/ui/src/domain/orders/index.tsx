@@ -8,8 +8,6 @@ import RouteContainer from "../../components/extensions/route-container"
 import WidgetContainer from "../../components/extensions/widget-container"
 import Button from "../../components/fundamentals/button"
 import ExportIcon from "../../components/fundamentals/icons/export-icon"
-import BodyCard from "../../components/organisms/body-card"
-import TableViewHeader from "../../components/organisms/custom-table-header"
 import ExportModal from "../../components/organisms/export-modal"
 import OrderTable from "../../components/templates/order-table"
 import useNotification from "../../hooks/use-notification"
@@ -21,16 +19,13 @@ import { getErrorMessage } from "../../utils/error-messages"
 import Details from "./details"
 import { transformFiltersAsExportContext } from "./utils"
 
-const VIEWS = ["orders", "drafts"]
-
 const OrderIndex = () => {
-  const view = "orders"
-
   const { t } = useTranslation()
   const { resetInterval } = usePolling()
-  const navigate = useNavigate()
   const createBatchJob = useAdminCreateBatchJob()
   const notification = useNotification()
+
+  const view = t("sidebar-orders", "orders")
 
   const [contextFilters, setContextFilters] =
     useState<Record<string, { filter: string[] }>>()
@@ -42,20 +37,6 @@ const OrderIndex = () => {
   } = useToggleState(false)
 
   const { getWidgets } = useWidgets()
-
-  const actions = useMemo(() => {
-    return [
-      <Button
-        key="export"
-        variant="secondary"
-        size="small"
-        onClick={() => openExportModal()}
-      >
-        <ExportIcon size={20} />
-        Export Orders
-      </Button>,
-    ]
-  }, [view])
 
   const handleCreateExport = () => {
     const reqObj = {
@@ -100,23 +81,7 @@ const OrderIndex = () => {
           )
         })}
         <div className="flex w-full grow flex-col">
-          <BodyCard
-            customHeader={
-              <TableViewHeader
-                views={VIEWS}
-                setActiveView={(v) => {
-                  if (v === "drafts") {
-                    navigate(`/a/draft-orders`)
-                  }
-                }}
-                activeView={view}
-              />
-            }
-            className="h-fit"
-            customActionable={actions}
-          >
-            <OrderTable setContextFilters={setContextFilters} />
-          </BodyCard>
+          <OrderTable setContextFilters={setContextFilters} />
         </div>
         {getWidgets("order.list.after").map((w, i) => {
           return (
