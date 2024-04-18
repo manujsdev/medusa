@@ -259,6 +259,14 @@
   "timeline-added-note": "Added note",
   "timeline-error": "Error",
   "timeline-timeline": "Timeline",
+  "timeline-placeholder": "Write a note",
+  "timeline-order-placed": "Order Placed",
+
+  "timeline-replacement-items-fulfilled": "Replacement Items Fulfilled",
+  "timeline-exchange-items-fulfilled": "Exchange Items Fulfilled",
+  "timeline-items-fulfilled": "Items Fulfilled",
+  "timeline-shipping-from": "Shipping from",
+
   "upload-modal-new": "new",
   "upload-modal-updates": "updates",
   "upload-modal-drop-your-file-here-or": "Drop your file here, or",
@@ -1813,6 +1821,25 @@
   "settings-invite-link-template": "Invite link template",
   "settings-manage-the-general-settings-for-your-store": "Manage the general settings for your store",
   "settings-manage-the-settings-for-your-store-apos-s-extensions": "Manage the settings for your store extensions",
+
+  "settings-api-key": "API Key Management",
+  "settings-api-key-desc": "Create and manage API keys",
+  "settings-currencies": "Currencies",
+  "settings-currencies-desc": "Manage the currencies of your store",
+  "settings-personal-info": "Personal Information",
+  "settings-personal-info-desc": "Manage your MKT profile",
+  "settings-regions": "Regions",
+  "settings-regions-desc": "Manage shipping, payment, and fulfillment across regions",
+  "settings-return-reasons": "Return Reasons",
+  "settings-return-reasons-desc": "Manage reasons for returned items",
+  "settings-sales-channels": "Sales Channels",
+  "settings-sales-channels-desc": "Control which product are available in which channels",
+  "settings-store-details-desc": "Manage your business details",
+  "settings-taxes": "Taxes",
+  "settings-taxes-desc": "Manage taxes across regions and products",
+  "settings-the-team": "The Team",
+  "settings-the-team-desc": "Manage users of your MKT Store",
+
   "edit-user-information-success": "Success",
   "edit-user-information-your-information-was-successfully-updated": "Your information was successfully updated",
   "edit-user-information-edit-information": "Edit information",
@@ -2019,5 +2046,9 @@
   "users-the-team": "The Team",
   "users-manage-users-of-your-medusa-store": "Manage users of your Medusa Store",
   "users-count_one": "{{count}}",
-  "users-count_other": "{{count}}"
+  "users-count_other": "{{count}}",
+  "customer-registered": "Registered",
+  "customer-guest": "Guest",
+  "settings-title": "Settings",
+  "sign-out": "Sign out"
 }

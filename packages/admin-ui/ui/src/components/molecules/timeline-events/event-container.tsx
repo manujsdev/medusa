@@ -5,6 +5,7 @@ import Tooltip from "../../atoms/tooltip"
 import BellOffIcon from "../../fundamentals/icons/bell-off-icon"
 import ChevronDownIcon from "../../fundamentals/icons/chevron-down"
 import ChevronUpIcon from "../../fundamentals/icons/chevron-up"
+import { useTranslation } from "react-i18next"
 
 export enum EventIconColor {
   GREEN = "text-emerald-40",
@@ -42,6 +43,9 @@ const EventContainer: React.FC<EventContainerProps> = ({
   detail,
 }) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(!expandable)
+
+  const { i18n } = useTranslation()
+  moment.locale(i18n.language)
 
   const toggleExpand = () => {
     setIsExpanded((prev) => !prev)

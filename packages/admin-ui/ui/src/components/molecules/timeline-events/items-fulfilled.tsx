@@ -3,21 +3,23 @@ import { ItemsFulfilledEvent } from "../../../hooks/use-build-timeline"
 import PackageIcon from "../../fundamentals/icons/package-icon"
 import EventContainer from "./event-container"
 import EventItemContainer from "./event-item-container"
+import { useTranslation } from "react-i18next"
 
 type ItemsFulfilledProps = {
   event: ItemsFulfilledEvent
 }
 
 const ItemsFulfilled: React.FC<ItemsFulfilledProps> = ({ event }) => {
+  const { t } = useTranslation()
   const title =
     event.sourceType === "claim"
-      ? "Replacement Items Fulfilled"
+      ? t("timeline-replacement-items-fulfilled", "Replacement Items Fulfilled")
       : event.sourceType === "exchange"
-      ? "Exchange Items Fulfilled"
-      : "Items Fulfilled"
+      ? t("timeline-exchange-items-fulfilled", "Exchange Items Fulfilled")
+      : t("timeline-items-fulfilled", "Items Fulfilled")
 
   const detail = event.locationName
-    ? `Shipping from ${event.locationName}`
+    ? `${t("ttimeline-shipping-from", "Items Fulfilled")} ${event.locationName}`
     : undefined
 
   const args = {

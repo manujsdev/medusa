@@ -258,7 +258,15 @@
   "timeline-success": "Satisfactorio",
   "timeline-added-note": "Nota añadida",
   "timeline-error": "Error",
-  "timeline-timeline": "Timeline",
+  "timeline-timeline": "Línea de tiempo",
+  "timeline-placeholder": "Escribe una nota",
+  "timeline-order-placed": "Orden realizada",
+
+  "timeline-replacement-items-fulfilled": "Artículos de reemplazo entregados",
+  "timeline-exchange-items-fulfilled": "Artículos de intercambio realizados",
+  "timeline-items-fulfilled": "Artículos entregados",
+  "timeline-shipping-from": "Shipping from",
+
   "upload-modal-new": "nuevo",
   "upload-modal-updates": "actualizaciones",
   "upload-modal-drop-your-file-here-or": "Arrastra tu archivo aquí, o",
@@ -1813,6 +1821,25 @@
   "settings-invite-link-template": "Plantilla del enlace de invitación",
   "settings-manage-the-general-settings-for-your-store": "Maneja los ajustes generales de tu tienda",
   "settings-manage-the-settings-for-your-store-apos-s-extensions": "Maneja los ajustes para las extensiones de tu tienda",
+
+  "settings-api-key": "Gestión de claves API",
+  "settings-api-key-desc": "Crear y administrar claves API",
+  "settings-currencies": "Monedas",
+  "settings-currencies-desc": "Gestiona las monedas de tu tienda",
+  "settings-personal-info": "Información personal",
+  "settings-personal-info-desc": "Gestiona tu perfil de MKT",
+  "settings-regions": "Regiones",
+  "settings-regions-desc": "Gestione el envío, el pago y el cumplimiento en todas las regiones",
+  "settings-return-reasons": "Razones de devolución",
+  "settings-return-reasons-desc": "Gestionar los motivos de los artículos devueltos",
+  "settings-sales-channels": "Canales de venta",
+  "settings-sales-channels-desc": "Controlar qué producto está disponible en qué canales",
+  "settings-store-details-desc": "Gestiona los datos de tu negocio",
+  "settings-taxes": "Impuestos",
+  "settings-taxes-desc": "Gestionar impuestos en todas las regiones y productos",
+  "settings-the-team": "El equipo",
+  "settings-the-team-desc": "Administrar usuarios de tu tienda MKT",
+
   "edit-user-information-success": "Satisfactorio",
   "edit-user-information-your-information-was-successfully-updated": "Tu información fue actualizada correctamente",
   "edit-user-information-edit-information": "Editar información",
@@ -2019,5 +2046,9 @@
   "users-the-team": "El Equipo",
   "users-manage-users-of-your-medusa-store": "Administrar usuarios de tu Tienda Medusa",
   "users-count_one": "{{count}}",
-  "users-count_other": "{{count}}"
+  "users-count_other": "{{count}}",
+  "customer-registered": "Registrado",
+  "customer-guest": "Invitado",
+  "settings-title": "Ajustes",
+  "sign-out": "Cerrar sesión"
 }

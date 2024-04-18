@@ -8,12 +8,14 @@ import Avatar from "../../atoms/avatar"
 import Button from "../../fundamentals/button"
 import GearIcon from "../../fundamentals/icons/gear-icon"
 import SignOutIcon from "../../fundamentals/icons/log-out-icon"
+import { useTranslation } from "react-i18next"
 
 const UserMenu: React.FC = () => {
   const navigate = useNavigate()
 
   const { user, isLoading, remove } = useAdminGetSession()
   const { mutate } = useAdminDeleteSession()
+  const { t } = useTranslation()
 
   const notification = useNotification()
 
@@ -53,7 +55,7 @@ const UserMenu: React.FC = () => {
               onClick={() => navigate("/a/settings")}
             >
               <GearIcon />
-              Settings
+              {t("settings-title", "Settings")}
             </Button>
           </DropdownMenu.Item>
           <DropdownMenu.Item className="outline-none">
@@ -64,7 +66,7 @@ const UserMenu: React.FC = () => {
               onClick={() => logOut()}
             >
               <SignOutIcon size={20} />
-              Sign out
+              {t("sign-out", "Sign out")}
             </Button>
           </DropdownMenu.Item>
         </DropdownMenu.Content>

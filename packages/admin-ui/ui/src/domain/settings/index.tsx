@@ -33,65 +33,6 @@ type SettingsCardType = {
   feature_flag?: string
 }
 
-const settings: SettingsCardType[] = [
-  {
-    heading: "API Key Management",
-    description: "Create and manage API keys",
-    icon: KeyIcon,
-    to: "/a/publishable-api-keys",
-    feature_flag: "publishable_api_keys",
-  },
-  {
-    heading: "Currencies",
-    description: "Manage the currencies of your store",
-    icon: CoinsIcon,
-    to: "/a/settings/currencies",
-  },
-  {
-    heading: "Personal Information",
-    description: "Manage your Medusa profile",
-    icon: HappyIcon,
-    to: "/a/settings/personal-information",
-  },
-  {
-    heading: "Regions",
-    description: "Manage shipping, payment, and fulfillment across regions",
-    icon: MapPinIcon,
-    to: "/a/settings/regions",
-  },
-  {
-    heading: "Return Reasons",
-    description: "Manage reasons for returned items",
-    icon: ArrowUTurnLeft,
-    to: "/a/settings/return-reasons",
-  },
-  {
-    heading: "Sales Channels",
-    description: "Control which product are available in which channels",
-    icon: ChannelsIcon,
-    feature_flag: "sales_channels",
-    to: "/a/sales-channels",
-  },
-  {
-    heading: "Store Details",
-    description: "Manage your business details",
-    icon: CrosshairIcon,
-    to: "/a/settings/details",
-  },
-  {
-    heading: "Taxes",
-    description: "Manage taxes across regions and products",
-    icon: TaxesIcon,
-    to: "/a/settings/taxes",
-  },
-  {
-    heading: "The Team",
-    description: "Manage users of your Medusa Store",
-    icon: UsersIcon,
-    to: "/a/settings/team",
-  },
-]
-
 const renderCard = ({
   heading,
   description,
@@ -123,6 +64,86 @@ const SettingsIndex = () => {
   const extensionCards = getCards()
 
   const { t } = useTranslation()
+
+  const settings: SettingsCardType[] = [
+    {
+      heading: t("settings-api-key", "API Key Management"),
+      description: t("settings-api-key-desc", "Create and manage API keys"),
+      icon: KeyIcon,
+      to: "/a/publishable-api-keys",
+      feature_flag: "publishable_api_keys",
+    },
+    {
+      heading: t("settings-currencies", "Currencies"),
+      description: t(
+        "settings-currencies-desc",
+        "Manage the currencies of your store"
+      ),
+      icon: CoinsIcon,
+      to: "/a/settings/currencies",
+    },
+    {
+      heading: t("settings-personal-info", "Personal Information"),
+      description: t("settings-personal-info-desc", "Manage your MKT profile"),
+      icon: HappyIcon,
+      to: "/a/settings/personal-information",
+    },
+    {
+      heading: t("settings-regions", "Regions"),
+      description: t(
+        "settings-regions-desc",
+        "Manage shipping, payment, and fulfillment across regions"
+      ),
+      icon: MapPinIcon,
+      to: "/a/settings/regions",
+    },
+    {
+      heading: t("settings-return-reasons", "Return Reasons"),
+      description: t(
+        "settings-return-reasons-desc",
+        "Manage reasons for returned items"
+      ),
+      icon: ArrowUTurnLeft,
+      to: "/a/settings/return-reasons",
+    },
+    {
+      heading: t("settings-sales-channels", "Sales Channels"),
+      description: t(
+        "settings-sales-channels-desc",
+        "Control which product are available in which channels"
+      ),
+      icon: ChannelsIcon,
+      feature_flag: "sales_channels",
+      to: "/a/sales-channels",
+    },
+    {
+      heading: t("settings-store-details", "Store Details"),
+      description: t(
+        "settings-store-details-desc",
+        "Manage your business details"
+      ),
+      icon: CrosshairIcon,
+      to: "/a/settings/details",
+    },
+    {
+      heading: t("settings-taxes", "Taxes"),
+      description: t(
+        "settings-taxes-desc",
+        "Manage taxes across regions and products"
+      ),
+      icon: TaxesIcon,
+      to: "/a/settings/taxes",
+    },
+    {
+      heading: t("settings-the-team", "The Team"),
+      description: t(
+        "settings-the-team-desc",
+        "Manage users of your MKT Store"
+      ),
+      icon: UsersIcon,
+      to: "/a/settings/team",
+    },
+  ]
 
   return (
     <div className="gap-y-xlarge flex flex-col">
