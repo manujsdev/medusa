@@ -59,7 +59,10 @@ const EditCustomerGroupConditionSelector = ({ onClose }) => {
               "Search groups..."
             ),
           }}
-          resourceName="Customer groups"
+          resourceName={t(
+            "edit-condition-tables-resource-name-customer-groups",
+            "Customer groups"
+          )}
           totalCount={count || 0}
           selectedIds={items.map((i) => i.id)}
           data={customer_groups}

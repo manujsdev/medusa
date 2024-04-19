@@ -68,7 +68,10 @@ const EditCollectionConditionSelector = ({ onClose }) => {
               },
             ],
           }}
-          resourceName="Collections"
+          resourceName={t(
+            "edit-condition-tables-resource-name-collection",
+            "Collections"
+          )}
           totalCount={count || 0}
           selectedIds={items?.map((c) => c.id)}
           data={collections}

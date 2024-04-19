@@ -50,7 +50,7 @@ const EditTypeConditionSelector = ({ onClose }) => {
               "Search by type..."
             ),
           }}
-          resourceName="Types"
+          resourceName={t("edit-condition-tables-resource-name-types", "Types")}
           totalCount={count || 0}
           selectedIds={items?.map((c) => c.id)}
           data={product_types}

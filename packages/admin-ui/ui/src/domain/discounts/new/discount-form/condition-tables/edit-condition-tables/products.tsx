@@ -56,7 +56,10 @@ const EditProductConditionSelector = ({ onClose }) => {
               "Search products..."
             ),
           }}
-          resourceName="Products"
+          resourceName={t(
+            "edit-condition-tables-resource-name-products",
+            "Products"
+          )}
           totalCount={count || 0}
           selectedIds={items.map((i) => i.id)}
           data={products as Product[] | undefined}

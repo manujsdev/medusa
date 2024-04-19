@@ -53,7 +53,10 @@ const EditTagConditionSelector = ({ onClose }) => {
                   "Search by tag..."
                 ),
               }}
-              resourceName="Tags"
+              resourceName={t(
+                "edit-condition-tables-resource-name-tags",
+                "Tags"
+              )}
               totalCount={count || 0}
               selectedIds={items.map((i) => i.id)}
               data={product_tags}
