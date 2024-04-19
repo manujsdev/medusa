@@ -76,7 +76,8 @@ const Edit = () => {
                 />
               )
             })}
-            <ProductRawSection product={product} />
+            {/* TODO: see the JSON in the future */}
+            {/* <ProductRawSection product={product} /> */}
           </div>
           <div className="gap-y-xsmall col-span-4 flex flex-col">
             <ProductThumbnailSection product={product} />

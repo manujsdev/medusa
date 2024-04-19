@@ -91,7 +91,8 @@ const Manage = () => {
             )
           })}
 
-          <ProductRawSection product={giftCard} />
+          {/* TODO: see the JSON in the future */}
+          {/* <ProductRawSection product={giftCard} /> */}
         </div>
         <div className="gap-y-xsmall col-span-4 flex flex-col">
           <ProductThumbnailSection product={giftCard} />

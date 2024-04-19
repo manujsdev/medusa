@@ -194,7 +194,7 @@ const CollectionDetails = () => {
                   /{collection.handle}
                 </p>
               </div>
-              {collection.metadata && (
+              {/* {collection.metadata && (
                 <div className="mt-large gap-y-base flex flex-col">
                   <h3 className="inter-base-semibold">
                     {t("details-metadata", "Metadata")}
@@ -203,7 +203,7 @@ const CollectionDetails = () => {
                     <JSONView data={collection.metadata} />
                   </div>
                 </div>
-              )}
+              )} */}
             </div>
           </div>
 
@@ -242,11 +242,11 @@ const CollectionDetails = () => {
               />
             )
           })}
-
-          <RawJSON
+          {/* TODO: JSON to see in the future */}
+          {/* <RawJSON
             data={collection}
             title={t("details-raw-collection", "Raw collection")}
-          />
+          /> */}
         </div>
         <Spacer />
       </div>

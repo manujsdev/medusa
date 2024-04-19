@@ -139,12 +139,13 @@ const EditCustomerModal = ({
                 />
               </div>
             </div>
-            <div>
+            {/* TODO: see the JSON in the future */}
+            {/* <div>
               <h2 className="inter-base-semibold mb-base">
                 {t("details-metadata", "Metadata")}
               </h2>
               <MetadataForm form={nestedForm(form, "metadata")} />
-            </div>
+            </div> */}
           </div>
         </Modal.Content>
         <Modal.Footer>

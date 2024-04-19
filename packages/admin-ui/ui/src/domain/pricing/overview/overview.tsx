@@ -164,6 +164,63 @@ const PriceListOverview = () => {
       keepPreviousData: true,
     }
   )
+  const columns = [
+    columnHelper.accessor("name", {
+      header: t("price-table-name", "Name"),
+      cell: (info) => info.getValue(),
+    }),
+    columnHelper.accessor("description", {
+      header: t("price-table-description", "Description"),
+      cell: (info) => (
+        <span className="overflow-hidden text-ellipsis whitespace-nowrap">
+          {info.getValue()}
+        </span>
+      ),
+    }),
+    columnHelper.accessor("status", {
+      header: t("price-table-status", "Status"),
+      cell: ({ getValue, row }) => {
+        const startsAt = row.original.starts_at
+        const endsAt = row.original.ends_at
+
+        const isExpired = endsAt ? new Date(endsAt) < new Date() : false
+        const isScheduled = startsAt ? new Date(startsAt) > new Date() : false
+        const isDraft = getValue() === PriceListStatus.DRAFT
+
+        const color = isExpired
+          ? "red"
+          : isDraft
+          ? "grey"
+          : isScheduled
+          ? "orange"
+          : "green"
+
+        const text = isExpired
+          ? t("templates-expired", "Expired")
+          : isDraft
+          ? t("general-draft", "Draft")
+          : isScheduled
+          ? t("discount-table-scheduled", "Scheduled")
+          : t("discount-table-active", "Active")
+
+        return (
+          <StatusBadge color={color}>
+            <span className="capitalize">{text}</span>
+          </StatusBadge>
+        )
+      },
+    }),
+    columnHelper.accessor("customer_groups", {
+      header: t("price-table-customer-groups", "Customer Groups"),
+      cell: (info) => info.getValue()?.length || "-",
+    }),
+    columnHelper.display({
+      id: "actions",
+      cell: (info) => {
+        return <PriceListTableRowActions row={info.row} />
+      },
+    }),
+  ]
 
   const table = useReactTable<PriceList>({
     data: price_lists ?? [],
@@ -219,7 +276,9 @@ const PriceListOverview = () => {
         })}
         <Container className="overflow-hidden p-0">
           <div className="flex items-center justify-between px-8 pb-4 pt-6">
-            <Heading>Price Lists</Heading>
+            <Heading>
+              {t("price-list-table-price-lists", "Price Lists")}
+            </Heading>
             <div className="flex items-center gap-x-2">
               <PriceListTableFilters />
               <Input
@@ -315,64 +374,6 @@ const PriceListOverview = () => {
 }
 
 const columnHelper = createColumnHelper<PriceList>()
-
-const columns = [
-  columnHelper.accessor("name", {
-    header: "Name",
-    cell: (info) => info.getValue(),
-  }),
-  columnHelper.accessor("description", {
-    header: "Description",
-    cell: (info) => (
-      <span className="overflow-hidden text-ellipsis whitespace-nowrap">
-        {info.getValue()}
-      </span>
-    ),
-  }),
-  columnHelper.accessor("status", {
-    header: "Status",
-    cell: ({ getValue, row }) => {
-      const startsAt = row.original.starts_at
-      const endsAt = row.original.ends_at
-
-      const isExpired = endsAt ? new Date(endsAt) < new Date() : false
-      const isScheduled = startsAt ? new Date(startsAt) > new Date() : false
-      const isDraft = getValue() === PriceListStatus.DRAFT
-
-      const color = isExpired
-        ? "red"
-        : isDraft
-        ? "grey"
-        : isScheduled
-        ? "orange"
-        : "green"
-
-      const text = isExpired
-        ? "Expired"
-        : isDraft
-        ? "Draft"
-        : isScheduled
-        ? "Scheduled"
-        : "Active"
-
-      return (
-        <StatusBadge color={color}>
-          <span className="capitalize">{text}</span>
-        </StatusBadge>
-      )
-    },
-  }),
-  columnHelper.accessor("customer_groups", {
-    header: "Customer Groups",
-    cell: (info) => info.getValue()?.length || "-",
-  }),
-  columnHelper.display({
-    id: "actions",
-    cell: (info) => {
-      return <PriceListTableRowActions row={info.row} />
-    },
-  }),
-]
 
 type PriceListTableRowActionsProps = {
   row: Row<PriceList>

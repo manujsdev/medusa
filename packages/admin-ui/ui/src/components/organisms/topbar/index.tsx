@@ -25,7 +25,7 @@ const Topbar: React.FC = () => {
   return (
     <div className="min-h-topbar max-h-topbar pr-xlarge pl-base bg-grey-0 border-grey-20 flex w-full items-center justify-between border-b">
       <SearchBar />
-      <div className="flex items-center">
+      {/* <div className="flex items-center">
         <NotificationBell
           onClick={onNotificationBellClick}
           variant={"ghost"}
@@ -34,7 +34,7 @@ const Topbar: React.FC = () => {
       </div>
       {activityDrawerState && (
         <ActivityDrawer onDismiss={activityDrawerClose} />
-      )}
+      )} */}
     </div>
   )
 }

@@ -197,12 +197,12 @@ const CollectionModal: React.FC<CollectionModalProps> = ({
                 />
               </div>
             </div>
-            <div className="mt-xlarge">
+            {/* <div className="mt-xlarge">
               <h2 className="inter-base-semibold mb-base">
                 {t("collection-modal-metadata", "Metadata")}
               </h2>
               <MetadataForm form={nestedForm(form, "metadata")} />
-            </div>
+            </div> */}
           </Modal.Content>
           <Modal.Footer>
             <div className="gap-x-xsmall flex w-full items-center justify-end">
