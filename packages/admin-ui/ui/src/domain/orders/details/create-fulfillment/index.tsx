@@ -318,7 +318,7 @@ const CreateFulfillmentModal: React.FC<CreateFulfillmentModalProps> = ({
                 setErrors={setErrors}
               />
             </div>
-            <div className="mt-4">
+            {/* <div className="mt-4">
               <Metadata metadata={metadata} setMetadata={setMetadata} />
             </div>
             <div>
@@ -334,13 +334,14 @@ const CreateFulfillmentModal: React.FC<CreateFulfillmentModalProps> = ({
                   onCheckedChange={(checked) => setNoNotis(!checked)}
                 />
               </div>
+              // TODO: to send notifications in the future
               <p className="inter-base-regular text-grey-50">
                 {t(
                   "create-fulfillment-when-toggled-notification-emails-will-be-sent",
                   "When toggled, notification emails will be sent."
                 )}
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </FocusModal.Main>

@@ -215,8 +215,9 @@ const MarkShippedModal: React.FC<MarkShippedModalProps> = ({
             </div>
           </Modal.Content>
           <Modal.Footer>
-            <div className="flex h-8 w-full justify-between">
-              <div
+            <div className="flex h-8 w-full justify-end">
+              {/* TODO: to send notifications in the future */}
+              {/* <div
                 className="flex h-full cursor-pointer items-center"
                 onClick={() => setNoNotis(!noNotis)}
               >
@@ -240,7 +241,7 @@ const MarkShippedModal: React.FC<MarkShippedModalProps> = ({
                   {t("mark-shipped-send-notifications", "Send notifications")}
                   <IconTooltip content="" />
                 </span>
-              </div>
+              </div> */}
               <div className="flex">
                 <Button
                   variant="ghost"

@@ -132,7 +132,7 @@ export const FormattedFulfillment = ({
   return (
     <div className="flex w-full justify-between">
       <div className="flex flex-col space-y-1 py-4">
-        <div className="text-grey-90">
+        {/* <div className="text-grey-90">
           {fulfillment.canceled_at
             ? t(
                 "templates-fulfillment-has-been-canceled",
@@ -146,7 +146,7 @@ export const FormattedFulfillment = ({
                   provider: capitalize(fulfillment.provider_id),
                 }
               )}
-        </div>
+        </div> */}
         <div className="text-grey-50 flex">
           {!fulfillment.shipped_at
             ? t("templates-not-shipped", "Not shipped")

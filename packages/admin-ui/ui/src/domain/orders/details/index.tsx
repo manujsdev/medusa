@@ -257,48 +257,48 @@ const OrderDetails = () => {
       icon: <DetailsIcon size={"20"} />,
       onClick: () => navigate(`/a/customers/${order?.customer.id}`),
     },
-    {
-      label: t("details-transfer-ownership", "Transfer ownership"),
-      icon: <RefreshIcon size={"20"} />,
-      onClick: () => toggleTransferOrderModal(),
-    },
+    // {
+    //   label: t("details-transfer-ownership", "Transfer ownership"),
+    //   icon: <RefreshIcon size={"20"} />,
+    //   onClick: () => toggleTransferOrderModal(),
+    // },
   ]
 
-  customerActionables.push({
-    label: t("details-edit-shipping-address", "Edit Shipping Address"),
-    icon: <TruckIcon size={"20"} />,
-    onClick: () => {
-      setAddressModal({
-        address: order?.shipping_address,
-        type: AddressType.SHIPPING,
-      })
-      openAddressModal()
-    },
-  })
+  // customerActionables.push({
+  //   label: t("details-edit-shipping-address", "Edit Shipping Address"),
+  //   icon: <TruckIcon size={"20"} />,
+  //   onClick: () => {
+  //     setAddressModal({
+  //       address: order?.shipping_address,
+  //       type: AddressType.SHIPPING,
+  //     })
+  //     openAddressModal()
+  //   },
+  // })
 
-  customerActionables.push({
-    label: t("details-edit-billing-address", "Edit Billing Address"),
-    icon: <DollarSignIcon size={"20"} />,
-    onClick: () => {
-      setAddressModal({
-        address: order?.billing_address,
-        type: AddressType.BILLING,
-      })
-      openAddressModal()
-    },
-  })
+  // customerActionables.push({
+  //   label: t("details-edit-billing-address", "Edit Billing Address"),
+  //   icon: <DollarSignIcon size={"20"} />,
+  //   onClick: () => {
+  //     setAddressModal({
+  //       address: order?.billing_address,
+  //       type: AddressType.BILLING,
+  //     })
+  //     openAddressModal()
+  //   },
+  // })
 
-  if (order?.email) {
-    customerActionables.push({
-      label: t("details-edit-email-address", "Edit Email Address"),
-      icon: <MailIcon size={"20"} />,
-      onClick: () => {
-        setEmailModal({
-          email: order?.email,
-        })
-      },
-    })
-  }
+  // if (order?.email) {
+  //   customerActionables.push({
+  //     label: t("details-edit-email-address", "Edit Email Address"),
+  //     icon: <MailIcon size={"20"} />,
+  //     onClick: () => {
+  //       setEmailModal({
+  //         email: order?.email,
+  //       })
+  //     },
+  //   })
+  // }
 
   if (!order && isLoading) {
     return (
@@ -315,7 +315,7 @@ const OrderDetails = () => {
   const anyItemsToFulfil = order.items.some(
     (item: LineItem) => item.quantity > (item.fulfilled_quantity ?? 0)
   )
-  console.log("order: ", order)
+
   return (
     <div>
       <OrderEditProvider orderId={id!}>
@@ -503,9 +503,10 @@ const OrderDetails = () => {
                         <span className="inter-small-regular text-grey-90 mt-2">
                           {method?.shipping_option?.name || ""}
                         </span>
-                        <div className="mt-4 flex w-full flex-grow items-center">
+                        {/* TODO: Order JSON */}
+                        {/* <div className="mt-4 flex w-full flex-grow items-center">
                           <JSONView data={method?.data} />
-                        </div>
+                        </div> */}
                       </div>
                     ))}
                     <div className="inter-small-regular mt-6 ">
@@ -583,10 +584,11 @@ const OrderDetails = () => {
                     )
                   })}
                 </div>
-                <RawJSON
+                {/* TODO: Order JSON */}
+                {/* <RawJSON
                   data={order}
                   title={t("details-raw-order", "Raw order")}
-                />
+                /> */}
                 <Spacer />
               </div>
               <Timeline orderId={order.id} />
