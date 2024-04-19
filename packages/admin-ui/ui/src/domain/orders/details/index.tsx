@@ -315,7 +315,7 @@ const OrderDetails = () => {
   const anyItemsToFulfil = order.items.some(
     (item: LineItem) => item.quantity > (item.fulfilled_quantity ?? 0)
   )
-
+  console.log("order: ", order)
   return (
     <div>
       <OrderEditProvider orderId={id!}>
@@ -359,7 +359,7 @@ const OrderDetails = () => {
                   subtitle={moment(order.created_at).format(
                     "D MMMM YYYY hh:mm a"
                   )}
-                  status={<OrderStatusComponent status={order.status} />}
+                  status={<OrderStatusComponent order={order} />}
                   forceDropdown={true}
                   actionables={[
                     {

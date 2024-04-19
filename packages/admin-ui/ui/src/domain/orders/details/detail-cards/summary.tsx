@@ -171,7 +171,7 @@ const SummaryCard: React.FC<SummaryCardProps> = ({ order, reservations }) => {
   return (
     <BodyCard
       className={"h-auto min-h-0 w-full"}
-      title="Summary"
+      title={t("summary", "Summary")}
       status={
         isFeatureEnabled("inventoryService") &&
         Array.isArray(reservations) && (
@@ -191,7 +191,6 @@ const SummaryCard: React.FC<SummaryCardProps> = ({ order, reservations }) => {
           />
         )
       }
-      actionables={actionables}
     >
       <div className="mt-6">
         {order.items?.map((item, i) => (
