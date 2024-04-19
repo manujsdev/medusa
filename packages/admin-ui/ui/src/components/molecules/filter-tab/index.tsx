@@ -2,6 +2,7 @@ import React from "react"
 import clsx from "clsx"
 
 import CrossIcon from "../../fundamentals/icons/cross-icon"
+import { useTranslation } from "react-i18next"
 
 type FilterTabProps = {
   label?: string
@@ -18,6 +19,7 @@ export const FilterTab: React.FC<FilterTabProps> = ({
   removable,
   onRemove,
 }) => {
+  const { t } = useTranslation()
   const handleClick = (e) => {
     if (typeof onClick !== "undefined") {
       onClick(e)
@@ -49,7 +51,7 @@ export const FilterTab: React.FC<FilterTabProps> = ({
         }
       )}
     >
-      {label}
+      {t(String(label?.toLowerCase()), "") || label}
       {removable && (
         <div onClick={handleRemove} className={"ml-1 cursor-pointer"}>
           <CrossIcon size={16} />

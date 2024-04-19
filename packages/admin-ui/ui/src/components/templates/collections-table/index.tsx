@@ -8,10 +8,12 @@ import { FilteringOptionProps } from "../../molecules/table/filtering-option"
 import TableContainer from "../../organisms/table-container"
 import useCollectionActions from "./use-collection-actions"
 import useCollectionTableColumn from "./use-collection-column"
+import { useTranslation } from "react-i18next"
 
 const DEFAULT_PAGE_SIZE = 15
 
 const CollectionsTable: React.FC = () => {
+  const { t } = useTranslation()
   const [filteringOptions, setFilteringOptions] = useState<
     FilteringOptionProps[]
   >([])
@@ -113,7 +115,7 @@ const CollectionsTable: React.FC = () => {
         count: count!,
         offset,
         pageSize: offset + rows.length,
-        title: "Collections",
+        title: t("collections", "Collections"),
         currentPage: pageIndex + 1,
         pageCount: pageCount,
         nextPage: handleNext,

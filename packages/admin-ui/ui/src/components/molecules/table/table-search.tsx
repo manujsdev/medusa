@@ -1,6 +1,7 @@
 import clsx from "clsx"
 import React from "react"
 import SearchIcon from "../../fundamentals/icons/search-icon"
+import { useTranslation } from "react-i18next"
 
 type TableSearchProps = {
   autoFocus?: boolean
@@ -12,15 +13,16 @@ type TableSearchProps = {
 const TableSearch: React.FC<TableSearchProps> = ({
   autoFocus,
   onSearch,
-  placeholder = "Search",
+  placeholder,
   searchValue,
   className,
   ...props
 }) => {
+  const { t } = useTranslation()
   return (
     <div
       className={clsx(
-        "inter-small-regular transition-color text-grey-50 rounded-rounded border-grey-20 min-w-content focus-within:shadow-input focus-within:border-violet-60 bg-grey-5 mt-1 mb-1 flex w-60 items-center border py-1.5 pl-1",
+        "inter-small-regular transition-color text-grey-50 rounded-rounded border-grey-20 min-w-content focus-within:shadow-input focus-within:border-violet-60 bg-grey-5 mb-1 mt-1 flex w-60 items-center border py-1.5 pl-1",
         className
       )}
       {...props}
@@ -35,7 +37,7 @@ const TableSearch: React.FC<TableSearchProps> = ({
         className={clsx(
           "inter-small-regular focus:text-grey-90 caret-violet-60 placeholder:inter-small-regular placeholder-grey-40 w-full bg-transparent focus:border-none focus:outline-none"
         )}
-        placeholder={placeholder}
+        placeholder={placeholder ?? t("search", "Search")}
         onChange={(e) => {
           onSearch(e.target.value)
         }}

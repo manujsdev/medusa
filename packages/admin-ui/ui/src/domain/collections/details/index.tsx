@@ -208,7 +208,7 @@ const CollectionDetails = () => {
           </div>
 
           <Section
-            title="Products"
+            title={t("productos", "Productos")}
             actions={[
               {
                 label: t("details-edit-products", "Edit Products"),

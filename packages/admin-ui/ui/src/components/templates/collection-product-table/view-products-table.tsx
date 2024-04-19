@@ -147,7 +147,7 @@ const ViewProductsTable: React.FC<ViewProductsTableProps> = ({
           count: count!,
           offset: offset,
           pageSize: offset + rows.length,
-          title: "Products",
+          title: t("productos", "Productos"),
           currentPage: pageIndex + 1,
           pageCount: pageCount,
           nextPage: handleNext,

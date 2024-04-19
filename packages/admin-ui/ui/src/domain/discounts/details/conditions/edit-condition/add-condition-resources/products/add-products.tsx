@@ -39,7 +39,7 @@ const AddProductConditionsScreen = () => {
             immediateSearchFocus: true,
             searchPlaceholder: t("products-search", "Search..."),
           }}
-          resourceName="Products"
+          resourceName={t("productos", "Productos")}
           totalCount={count ?? 0}
           selectedIds={selectedResources}
           data={products || []}

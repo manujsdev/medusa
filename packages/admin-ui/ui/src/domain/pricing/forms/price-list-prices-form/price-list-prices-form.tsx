@@ -117,7 +117,7 @@ const PriceListPricesForm = ({
             />
             <Input
               type="search"
-              placeholder="Search"
+              placeholder={t("search", "Search")}
               size="small"
               value={query}
               onChange={(e) => setQuery(e.target.value)}

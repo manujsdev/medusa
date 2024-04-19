@@ -70,7 +70,7 @@ const AddCollectionConditionSelector = ({
               "Search by title..."
             ),
           }}
-          resourceName="Collections"
+          resourceName={t("collections", "Collections")}
           totalCount={count || 0}
           selectedIds={items?.map((c) => c.id)}
           data={collections}

@@ -11,8 +11,10 @@ import {
 import { defaultQueryProps } from "../../../../../new/discount-form/condition-tables/shared/common"
 import { useEditConditionContext } from "../../edit-condition-provider"
 import ExistingConditionTableActions from "../../condition-table-actions"
+import { useTranslation } from "react-i18next"
 
 const ProductCollectionsConditionsTable = () => {
+  const { t } = useTranslation()
   const params = useQueryFilters(defaultQueryProps)
 
   const [selectedResources, setSelectedResources] = useState<string[]>([])
@@ -64,7 +66,7 @@ const ProductCollectionsConditionsTable = () => {
             />
           ),
         }}
-        resourceName="Collections"
+        resourceName={t("collections", "Collections")}
         totalCount={count ?? 0}
         selectedIds={selectedResources}
         data={collections || []}

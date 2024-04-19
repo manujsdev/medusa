@@ -135,6 +135,7 @@ const PriceListTableFilters = () => {
 }
 
 const PriceListOverview = () => {
+  const { t } = useTranslation()
   const { getWidgets } = useWidgets()
 
   const [searchParams] = useSearchParams()
@@ -224,7 +225,7 @@ const PriceListOverview = () => {
               <Input
                 size="small"
                 type="search"
-                placeholder="Search"
+                placeholder={t("search", "Search")}
                 value={query}
                 onChange={(e) => {
                   setQuery(e.target.value)

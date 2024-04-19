@@ -1,6 +1,7 @@
 import { omit } from "lodash"
 import qs from "qs"
 import { useMemo, useReducer, useState } from "react"
+import { useTranslation } from "react-i18next"
 
 type ProductDateFilter = null | {
   gt?: string
@@ -96,6 +97,7 @@ export const useProductFilters = (
   existing?: string,
   defaultFilters: ProductDefaultFilters | null = null
 ) => {
+  const { t } = useTranslation()
   if (existing && existing[0] === "?") {
     existing = existing.substring(1)
   }
@@ -263,7 +265,7 @@ export const useProductFilters = (
   const availableTabs = useMemo(() => {
     return [
       {
-        label: "Unpublished",
+        label: t("unpublished", "Unpublished"),
         value: "drafts",
       },
       ...tabs,

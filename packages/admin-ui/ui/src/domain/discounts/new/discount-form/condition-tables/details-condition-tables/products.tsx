@@ -62,7 +62,7 @@ const DetailsProductConditionSelector = ({
               "Search products..."
             ),
           }}
-          resourceName="Products"
+          resourceName={t("productos", "Productos")}
           totalCount={count || 0}
           selectedIds={items.map((i) => i.id)}
           data={products}
