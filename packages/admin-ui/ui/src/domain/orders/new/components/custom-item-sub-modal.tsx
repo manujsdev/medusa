@@ -37,7 +37,7 @@ const CustomItemSubModal: React.FC<CustomItemSubModalProps> = ({
               "components-e-g-gift-wrapping",
               "E.g. Gift wrapping"
             )}
-            label={t("components-title", "Title")}
+            label={t("title", "Title")}
             {...register("title", { required: true })}
             className="my-4"
             required

@@ -20,7 +20,11 @@ import MetadataForm, {
 } from "../../../components/forms/general/metadata-form"
 import { Controller, useForm } from "react-hook-form"
 import { nestedForm } from "../../../utils/nested-form"
-import { CategoryFormData, CategoryStatus, CategoryVisibility } from "./add-product-category"
+import {
+  CategoryFormData,
+  CategoryStatus,
+  CategoryVisibility,
+} from "./add-product-category"
 import { getDefaultCategoryValues } from "../utils"
 
 const visibilityOptions: (t: TFunction) => Option[] = (t) => [
@@ -56,8 +60,6 @@ function EditProductCategoriesSideModal(
   const { mutateAsync: updateCategory } = useAdminUpdateProductCategory(
     activeCategory?.id
   )
-
-  
 
   const form = useForm<CategoryFormData>({
     defaultValues: getDefaultCategoryValues(t, activeCategory),
@@ -139,7 +141,7 @@ function EditProductCategoriesSideModal(
             </Button>
           </div>
         </div>
-        <h3 className="inter-large-semibold flex items-center gap-2 text-xl text-gray-900 px-6">
+        <h3 className="inter-large-semibold flex items-center gap-2 px-6 text-xl text-gray-900">
           {t("modals-edit-product-category", "Edit product category")}
         </h3>
         {/* === DIVIDER === */}
@@ -167,12 +169,10 @@ function EditProductCategoriesSideModal(
           />
 
           <InputField
-            label={t("modals-handle", "Handle") as string}
+            label={t("handle", "Handle") as string}
             className="my-6"
             type="string"
-            placeholder={
-              t("modals-custom-handle", "Custom handle") as string
-            }
+            placeholder={t("modals-custom-handle", "Custom handle") as string}
             {...register("handle")}
           />
 
@@ -200,7 +200,9 @@ function EditProductCategoriesSideModal(
                   placeholder="Choose status"
                   options={statusOptions(t)}
                   value={
-                    statusOptions(t)[field.value?.value === CategoryStatus.Active ? 0 : 1]
+                    statusOptions(t)[
+                      field.value?.value === CategoryStatus.Active ? 0 : 1
+                    ]
                   }
                 />
               )
@@ -220,7 +222,9 @@ function EditProductCategoriesSideModal(
                   placeholder="Choose visibility"
                   options={visibilityOptions(t)}
                   value={
-                    visibilityOptions(t)[field.value.value === CategoryVisibility.Public ? 0 : 1]
+                    visibilityOptions(t)[
+                      field.value.value === CategoryVisibility.Public ? 0 : 1
+                    ]
                   }
                 />
               )

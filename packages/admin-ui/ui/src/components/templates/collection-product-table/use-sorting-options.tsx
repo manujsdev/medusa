@@ -69,7 +69,7 @@ const useSortingOptions = (products: SimpleProductType[]) => {
             },
           },
           {
-            title: t("collection-product-table-title", "Title"),
+            title: t("title", "Title"),
             onClick: () => {
               const sorted = products.sort(sortByTitle)
               console.log(sorted)

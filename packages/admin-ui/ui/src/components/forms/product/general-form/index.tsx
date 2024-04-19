@@ -2,6 +2,7 @@ import FormValidator from "../../../../utils/form-validator"
 import { NestedForm } from "../../../../utils/nested-form"
 import InputField from "../../../molecules/input"
 import TextArea from "../../../molecules/textarea"
+import { useTranslation } from "react-i18next"
 
 export type GeneralFormType = {
   title: string
@@ -18,6 +19,7 @@ type Props = {
 }
 
 const GeneralForm = ({ form, requireHandle = true, isGiftCard }: Props) => {
+  const { t } = useTranslation()
   const {
     register,
     path,
@@ -28,28 +30,34 @@ const GeneralForm = ({ form, requireHandle = true, isGiftCard }: Props) => {
     <div>
       <div className="gap-x-large mb-small grid grid-cols-2">
         <InputField
-          label="Title"
-          placeholder={isGiftCard ? "Gift Card" : "Winter Jacket"}
+          label={t("title", "Title")}
+          placeholder={
+            isGiftCard ? t("gift-card", "Gift Card") : "Winter Jacket"
+          }
           required
           {...register(path("title"), {
-            required: "Title is required",
+            required: t("title-is-required", "Title is required"),
             minLength: {
               value: 1,
-              message: "Title must be at least 1 character",
+              message: t(
+                "title-must-be-at-least-1-char",
+                "Title must be at least 1 character"
+              ),
             },
             pattern: FormValidator.whiteSpaceRule("Title"),
           })}
           errors={errors}
         />
         <InputField
-          label="Subtitle"
-          placeholder="Warm and cozy..."
+          label={t("subtitle", "Subtitle")}
+          placeholder={t("warm-and-cozy", "Warm and cozy...")}
           {...register(path("subtitle"), {
             pattern: FormValidator.whiteSpaceRule("Subtitle"),
           })}
           errors={errors}
         />
       </div>
+      {/* TODO translate */}
       <p className="inter-base-regular text-grey-50 mb-large">
         Give your {isGiftCard ? "gift card" : "product"} a short and clear
         title.
@@ -58,7 +66,7 @@ const GeneralForm = ({ form, requireHandle = true, isGiftCard }: Props) => {
       </p>
       <div className="gap-x-large mb-large grid grid-cols-2">
         <InputField
-          label="Handle"
+          label={t("handle", "Handle")}
           tooltipContent={
             !requireHandle
               ? `The handle is the part of the URL that identifies the ${

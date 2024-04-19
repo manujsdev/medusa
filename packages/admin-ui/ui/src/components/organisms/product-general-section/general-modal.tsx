@@ -113,7 +113,7 @@ const GeneralModal = ({ product, open, onClose }: Props) => {
               <h2 className="inter-base-semibold mb-base">
                 Organize{" "}
                 {product.is_giftcard
-                  ? t("product-general-section-gift-card", "Gift Card")
+                  ? t("gift-card", "Gift Card")
                   : t("product-general-section-product", "Product")}
               </h2>
               <OrganizeForm form={nestedForm(form, "organize")} />

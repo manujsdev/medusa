@@ -37,7 +37,7 @@ const RegionDetailsForm = ({ form, isCreate = false }: Props) => {
     <div>
       <div className="gap-large grid grid-cols-2">
         <InputField
-          label={t("region-form-title", "Title")}
+          label={t("title", "Title")}
           placeholder={t("region-form-europe", "Europe")}
           required
           {...register(path("name"), {

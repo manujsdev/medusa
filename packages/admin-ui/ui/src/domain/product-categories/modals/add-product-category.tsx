@@ -57,9 +57,6 @@ type CreateProductCategoryProps = {
   categories: ProductCategory[]
 }
 
-
-
-
 export type CategoryFormData = {
   name: string
   handle: string | undefined
@@ -98,8 +95,7 @@ function CreateProductCategory(props: CreateProductCategoryProps) {
   } = form
   const name = watch("name", "")
 
-  const { mutateAsync: createProductCategory } =
-    useAdminCreateProductCategory()
+  const { mutateAsync: createProductCategory } = useAdminCreateProductCategory()
 
   const submit = handleSubmit(async (data) => {
     try {
@@ -195,12 +191,10 @@ function CreateProductCategory(props: CreateProductCategoryProps) {
             />
 
             <InputField
-              label={t("modals-handle", "Handle") as string}
+              label={t("handle", "Handle") as string}
               type="string"
               className="w-[338px]"
-              placeholder={
-                t("modals-custom-handle", "Custom handle") as string
-              }
+              placeholder={t("modals-custom-handle", "Custom handle") as string}
               {...register("handle")}
             />
           </div>
@@ -251,14 +245,14 @@ function CreateProductCategory(props: CreateProductCategoryProps) {
                   return (
                     <NextSelect
                       {...field}
-                      label={
-                        t("modals-visibility", "Visibility") as string
-                      }
+                      label={t("modals-visibility", "Visibility") as string}
                       placeholder="Choose visibility"
                       options={visibilityOptions(t)}
                       value={
                         visibilityOptions(t)[
-                          field.value.value === CategoryVisibility.Public ? 0 : 1
+                          field.value.value === CategoryVisibility.Public
+                            ? 0
+                            : 1
                         ]
                       }
                     />

@@ -6,13 +6,14 @@ import WidgetContainer from "../../../components/extensions/widget-container"
 import ProductAttributesSection from "../../../components/organisms/product-attributes-section"
 import ProductGeneralSection from "../../../components/organisms/product-general-section"
 import ProductMediaSection from "../../../components/organisms/product-media-section"
-import ProductRawSection from "../../../components/organisms/product-raw-section"
 import ProductThumbnailSection from "../../../components/organisms/product-thumbnail-section"
 import ProductVariantsSection from "../../../components/organisms/product-variants-section"
 import { useWidgets } from "../../../providers/widget-provider"
 import { getErrorStatus } from "../../../utils/get-error-status"
+import { useTranslation } from "react-i18next"
 
 const Edit = () => {
+  const { t } = useTranslation()
   const { id } = useParams()
   const navigate = useNavigate()
 
@@ -47,7 +48,7 @@ const Edit = () => {
     <div className="pb-5xlarge">
       <BackButton
         path="/a/products"
-        label="Back to Products"
+        label={t("back-to-products", "Back to Products")}
         className="mb-xsmall"
       />
       <div className="gap-y-xsmall flex flex-col">

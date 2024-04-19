@@ -8,14 +8,14 @@ const useCollectionTableColumn = () => {
   const columns = useMemo(
     () => [
       {
-        Header: t("collections-table-title", "Title"),
+        Header: t("title", "Title"),
         accessor: "title",
         Cell: ({ row: { original } }) => {
           return <div className="flex items-center">{original.title}</div>
         },
       },
       {
-        Header: t("collections-table-handle", "Handle"),
+        Header: t("handle", "Handle"),
         accessor: "handle",
         Cell: ({ cell: { value } }) => <div>/{value}</div>,
       },

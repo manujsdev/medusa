@@ -138,14 +138,8 @@ const ProductDetails = ({ product }: Props) => {
       <h2 className="inter-base-semibold">
         {t("product-general-section-details", "Details")}
       </h2>
-      <Detail
-        title={t("product-general-section-subtitle", "Subtitle")}
-        value={product.subtitle}
-      />
-      <Detail
-        title={t("product-general-section-handle", "Handle")}
-        value={product.handle}
-      />
+      <Detail title={t("subtitle", "Subtitle")} value={product.subtitle} />
+      <Detail title={t("handle", "Handle")} value={product.handle} />
       <Detail
         title={t("product-general-section-type", "Type")}
         value={product.type?.value}

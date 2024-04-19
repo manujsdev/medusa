@@ -51,7 +51,7 @@ export const useVariantsTableColumns = (inventoryIsEnabled = false) => {
     }
     return [
       {
-        Header: t("product-variants-section-title", "Title"),
+        Header: t("title", "Title"),
         id: "title",
         accessor: "title",
       },

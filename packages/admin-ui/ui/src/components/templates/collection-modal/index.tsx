@@ -8,8 +8,7 @@ import { useForm } from "react-hook-form"
 import { useTranslation } from "react-i18next"
 import useNotification from "../../../hooks/use-notification"
 import { getErrorMessage } from "../../../utils/error-messages"
-import { nestedForm } from "../../../utils/nested-form"
-import MetadataForm, {
+import {
   getSubmittableMetadata,
   MetadataFormType,
 } from "../../forms/general/metadata-form"
@@ -170,7 +169,7 @@ const CollectionModal: React.FC<CollectionModalProps> = ({
               </h2>
               <div className="gap-x-base flex items-center">
                 <InputField
-                  label={t("collection-modal-title-label", "Title")}
+                  label={t("title", "Title")}
                   required
                   placeholder={t(
                     "collection-modal-title-placeholder",
@@ -179,7 +178,7 @@ const CollectionModal: React.FC<CollectionModalProps> = ({
                   {...register("title", { required: true })}
                 />
                 <InputField
-                  label={t("collection-modal-handle-label", "Handle")}
+                  label={t("handle", "Handle")}
                   placeholder={t(
                     "collection-modal-handle-placeholder",
                     "sunglasses"

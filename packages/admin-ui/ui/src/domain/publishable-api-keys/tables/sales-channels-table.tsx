@@ -37,7 +37,7 @@ const COLUMNS = [
     },
   },
   {
-    Header: <Translation>{(t) => t("tables-title", "Title")}</Translation>,
+    Header: <Translation>{(t) => t("title", "Title")}</Translation>,
     accessor: "name",
     maxWidth: 160,
     width: 160,

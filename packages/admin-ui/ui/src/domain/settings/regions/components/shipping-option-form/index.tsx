@@ -83,13 +83,10 @@ const ShippingOptionForm = ({ form, region, isEdit = false }: Props) => {
         </h3>
         <div className="gap-large grid grid-cols-2">
           <InputField
-            label={t("shipping-option-form-title", "Title")}
+            label={t("title", "Title")}
             required
             {...register("name", {
-              required: t(
-                "shipping-option-form-title-is-required",
-                "Title is required"
-              ),
+              required: t("title-is-required", "Title is required"),
               pattern: FormValidator.whiteSpaceRule("Title"),
               minLength: FormValidator.minOneCharRule("Title"),
             })}

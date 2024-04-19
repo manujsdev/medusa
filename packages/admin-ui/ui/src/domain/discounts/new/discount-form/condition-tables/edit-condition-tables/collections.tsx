@@ -63,7 +63,7 @@ const EditCollectionConditionSelector = ({ onClose }) => {
             ),
             filters: [
               {
-                title: t("edit-condition-tables-title", "Title"),
+                title: t("title", "Title"),
                 name: "title",
               },
             ],

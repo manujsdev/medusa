@@ -79,7 +79,7 @@ function DetailsModal(props: DetailsModalProps) {
 
         <div className="flex-grow">
           <InputField
-            label={t("modals-title", "Title")}
+            label={t("title", "Title")}
             type="string"
             name="name"
             value={name}

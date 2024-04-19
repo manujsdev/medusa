@@ -61,7 +61,7 @@ export const useProductColumns = () => {
       {
         Header: () => (
           <div className="flex min-w-[443px] items-center gap-1">
-            {t("shared-title", "Title")} <SortingIcon size={16} />
+            {t("title", "Title")} <SortingIcon size={16} />
           </div>
         ),
         accessor: "title",
