@@ -1,5 +1,6 @@
 import clsx from "clsx"
 import React, { useRef, useState } from "react"
+import { useTranslation } from "react-i18next"
 
 type FileUploadFieldProps = {
   onFileChosen: (files: File[]) => void
@@ -27,6 +28,7 @@ const FileUploadField: React.FC<FileUploadFieldProps> = ({
   placeholder = "",
   multiple = false,
 }) => {
+  const { t } = useTranslation()
   const inputRef = useRef<HTMLInputElement>(null)
   const [fileUploadError, setFileUploadError] = useState(false)
 
@@ -82,7 +84,18 @@ const FileUploadField: React.FC<FileUploadFieldProps> = ({
       )}
     >
       <div className="flex flex-col items-center">
-        <p>{text}</p>
+        <p>
+          <span>
+            {t(
+              "upload-modal-drop-your-file-here-or",
+              "Drop your file here, or"
+            )}
+            <span className="text-violet-60">
+              {" "}
+              {t("upload-modal-click-to-browse", "click to browse.")}
+            </span>
+          </span>
+        </p>
         {placeholder}
       </div>
       {fileUploadError && (

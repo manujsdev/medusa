@@ -87,7 +87,7 @@ const ProductGeneralSection = ({ product }: Props) => {
         </p>
         <ProductTags product={product} />
         <ProductDetails product={product} />
-        <ProductSalesChannels product={product} />
+        {/* <ProductSalesChannels product={product} /> */}
       </Section>
 
       <GeneralModal product={product} open={infoState} onClose={closeInfo} />

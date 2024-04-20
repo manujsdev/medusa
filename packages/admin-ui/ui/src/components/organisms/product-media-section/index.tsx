@@ -22,7 +22,7 @@ const ProductMediaSection = ({ product }: Props) => {
 
   return (
     <>
-      <Section title="Media" actions={actions}>
+      <Section title={t("new-media", "Media")} actions={actions}>
         {product.images && product.images.length > 0 && (
           <div className="gap-xsmall mt-base grid grid-cols-3">
             {product.images.map((image, index) => {

@@ -52,7 +52,7 @@ const ProductThumbnailSection = ({ product }: Props) => {
   return (
     <>
       <Section
-        title="Thumbnail"
+        title={t("gift-cards-thumbnail", "Thumbnail")}
         customActions={
           <div className="gap-x-xsmall flex items-center">
             <Button
