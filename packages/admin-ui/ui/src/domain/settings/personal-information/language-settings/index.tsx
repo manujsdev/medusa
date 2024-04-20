@@ -22,7 +22,7 @@ const LanguageSettings = () => {
         </div>
         <LanguageMenu />
       </div>
-      <div className="mt-small">
+      {/* <div className="mt-small">
         <a
           href="/"
           target="_blank"
@@ -34,7 +34,7 @@ const LanguageSettings = () => {
             "Help us translate"
           )}
         </a>
-      </div>
+      </div> */}
     </>
   )
 }

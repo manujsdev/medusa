@@ -66,13 +66,13 @@ const SettingsIndex = () => {
   const { t } = useTranslation()
 
   const settings: SettingsCardType[] = [
-    {
-      heading: t("settings-api-key", "API Key Management"),
-      description: t("settings-api-key-desc", "Create and manage API keys"),
-      icon: KeyIcon,
-      to: "/a/publishable-api-keys",
-      feature_flag: "publishable_api_keys",
-    },
+    // {
+    //   heading: t("settings-api-key", "API Key Management"),
+    //   description: t("settings-api-key-desc", "Create and manage API keys"),
+    //   icon: KeyIcon,
+    //   to: "/a/publishable-api-keys",
+    //   feature_flag: "publishable_api_keys",
+    // },
     {
       heading: t("settings-currencies", "Currencies"),
       description: t(
@@ -106,34 +106,34 @@ const SettingsIndex = () => {
       icon: ArrowUTurnLeft,
       to: "/a/settings/return-reasons",
     },
-    {
-      heading: t("settings-sales-channels", "Sales Channels"),
-      description: t(
-        "settings-sales-channels-desc",
-        "Control which product are available in which channels"
-      ),
-      icon: ChannelsIcon,
-      feature_flag: "sales_channels",
-      to: "/a/sales-channels",
-    },
-    {
-      heading: t("settings-store-details", "Store Details"),
-      description: t(
-        "settings-store-details-desc",
-        "Manage your business details"
-      ),
-      icon: CrosshairIcon,
-      to: "/a/settings/details",
-    },
-    {
-      heading: t("settings-taxes", "Taxes"),
-      description: t(
-        "settings-taxes-desc",
-        "Manage taxes across regions and products"
-      ),
-      icon: TaxesIcon,
-      to: "/a/settings/taxes",
-    },
+    // {
+    //   heading: t("settings-sales-channels", "Sales Channels"),
+    //   description: t(
+    //     "settings-sales-channels-desc",
+    //     "Control which product are available in which channels"
+    //   ),
+    //   icon: ChannelsIcon,
+    //   feature_flag: "sales_channels",
+    //   to: "/a/sales-channels",
+    // },
+    // {
+    //   heading: t("settings-store-details", "Store Details"),
+    //   description: t(
+    //     "settings-store-details-desc",
+    //     "Manage your business details"
+    //   ),
+    //   icon: CrosshairIcon,
+    //   to: "/a/settings/details",
+    // },
+    // {
+    //   heading: t("settings-taxes", "Taxes"),
+    //   description: t(
+    //     "settings-taxes-desc",
+    //     "Manage taxes across regions and products"
+    //   ),
+    //   icon: TaxesIcon,
+    //   to: "/a/settings/taxes",
+    // },
     {
       heading: t("settings-the-team", "The Team"),
       description: t(

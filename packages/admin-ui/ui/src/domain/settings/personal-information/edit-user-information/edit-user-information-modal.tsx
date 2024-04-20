@@ -75,12 +75,12 @@ const EditUserInformationModal = ({ user, open, onClose }: Props) => {
               <InputField
                 {...register("first_name")}
                 errors={errors}
-                label="First name"
+                label={t("edit-user-modal-first-name-label", "First Name")}
               />
               <InputField
                 {...register("last_name")}
                 errors={errors}
-                label="Last name"
+                label={t("edit-user-modal-last-name-label", "Last Name")}
               />
             </div>
           </div>

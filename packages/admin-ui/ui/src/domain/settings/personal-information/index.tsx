@@ -40,11 +40,11 @@ const PersonalInformation = () => {
           <div className="border-grey-20 py-xlarge border-t">
             <LanguageSettings />
           </div>
-          {isFeatureEnabled("analytics") && (
+          {/* {isFeatureEnabled("analytics") && (
             <div className="border-grey-20 py-xlarge border-t">
               <UsageInsights user={user} />
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </div>

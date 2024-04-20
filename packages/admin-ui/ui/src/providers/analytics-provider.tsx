@@ -181,11 +181,12 @@ export const AnalyticsProvider = ({ writeKey, children }: Props) => {
         setSubmittingConfig,
       }}
     >
-      {askPermission && (
+      {/* TODO: Analytics */}
+      {/* {askPermission && (
         <Fade isVisible={animateIn} isFullScreen={true}>
           <AnalyticsPreferencesModal />
         </Fade>
-      )}
+      )} */}
       {children}
     </AnalyticsContext.Provider>
   )

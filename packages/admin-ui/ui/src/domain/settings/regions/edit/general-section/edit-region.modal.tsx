@@ -122,13 +122,14 @@ const EditRegionModal = ({ region, onClose, open }: Props) => {
               </h3>
               <RegionProvidersForm form={nestedForm(form, "providers")} />
             </div>
-            <div className="bg-grey-20 my-xlarge h-px w-full" />
-            <div>
+            {/* <div className="bg-grey-20 my-xlarge h-px w-full" /> */}
+            {/* TODO: See JSON in the future */}
+            {/* <div>
               <h3 className="inter-base-semibold mb-base">
                 {t("general-section-metadata", "Metadata")}
               </h3>
               <MetadataForm form={nestedForm(form, "metadata")} />
-            </div>
+            </div> */}
           </Modal.Content>
           <Modal.Footer>
             <div className="gap-x-xsmall flex w-full items-center justify-end">

@@ -315,13 +315,14 @@ const ShippingOptionForm = ({ form, region, isEdit = false }: Props) => {
           />
         </div>
       </div>
-      <div className="bg-grey-20 my-xlarge h-px w-full" />
+      {/* TODO: See JSON in the future */}
+      {/* <div className="bg-grey-20 my-xlarge h-px w-full" />
       <div>
         <h3 className="inter-base-semibold mb-base">
           {t("shipping-option-form-metadata", "Metadata")}
         </h3>
         <MetadataForm form={nestedForm(form, "metadata")} />
-      </div>
+      </div> */}
     </div>
   )
 }

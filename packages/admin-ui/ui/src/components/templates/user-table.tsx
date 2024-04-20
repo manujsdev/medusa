@@ -6,7 +6,6 @@ import useNotification from "../../hooks/use-notification"
 import Medusa from "../../services/api"
 import ClipboardCopyIcon from "../fundamentals/icons/clipboard-copy-icon"
 import EditIcon from "../fundamentals/icons/edit-icon"
-import RefreshIcon from "../fundamentals/icons/refresh-icon"
 import TrashIcon from "../fundamentals/icons/trash-icon"
 import StatusIndicator from "../fundamentals/status-indicator"
 import SidebarTeamMember from "../molecules/sidebar-team-member"
@@ -45,6 +44,7 @@ const UserTable: React.FC<UserTableProps> = ({
   const notification = useNotification()
   const { store, isLoading } = useAdminStore()
   const { t } = useTranslation()
+  const origin = window.location.origin
 
   useEffect(() => {
     setElements([
@@ -121,30 +121,33 @@ const UserTable: React.FC<UserTableProps> = ({
       <Table.Row
         key={`invite-${index}`}
         actions={[
-          {
-            label: t("templates-resend-invitation", "Resend Invitation"),
-            onClick: () => {
-              Medusa.invites
-                .resend(invite.id)
-                .then(() => {
-                  notification(
-                    t("templates-success", "Success"),
-                    t(
-                      "templates-invitiation-link-has-been-resent",
-                      "Invitiation link has been resent"
-                    ),
-                    "success"
-                  )
-                })
-                .then(() => triggerRefetch())
-            },
-            icon: <RefreshIcon size={20} />,
-          },
+          // TODO: Must be enable when we will configure th email
+          // {
+          //   label: t("templates-resend-invitation", "Resend Invitation"),
+          //   onClick: () => {
+          //     Medusa.invites
+          //       .resend(invite.id)
+          //       .then(() => {
+          //         notification(
+          //           t("templates-success", "Success"),
+          //           t(
+          //             "templates-invitiation-link-has-been-resent",
+          //             "Invitiation link has been resent"
+          //           ),
+          //           "success"
+          //         )
+          //       })
+          //       .then(() => triggerRefetch())
+          //   },
+          //   icon: <RefreshIcon size={20} />,
+          // },
           {
             label: t("templates-copy-invite-link", "Copy invite link"),
             disabled: isLoading,
             onClick: () => {
-              copy(inviteLink.replace("{invite_token}", invite.token))
+              copy(
+                `${origin}${inviteLink.replace("{invite_token}", invite.token)}`
+              )
               notification(
                 t("templates-success", "Success"),
                 t(
