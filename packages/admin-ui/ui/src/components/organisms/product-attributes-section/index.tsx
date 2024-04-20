@@ -16,7 +16,7 @@ const ProductAttributesSection = ({ product }: Props) => {
 
   const actions: ActionType[] = [
     {
-      label: "Edit Attributes",
+      label: t("product-attributes-section-edit-attributes", "Edit Attributes"),
       onClick: toggle,
       icon: <EditIcon size={20} />,
     },
