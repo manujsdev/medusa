@@ -106,8 +106,8 @@ const PriceListTableFilters = () => {
           name="Status"
           onChange={onStatusChange}
           options={[
-            { label: "Active", value: "active" },
-            { label: "Draft", value: "draft" },
+            { label: t("templates-active", "Active"), value: "active" },
+            { label: t("general-draft", "Draft"), value: "draft" },
           ]}
           value={getStringArrayFromSearchParams("status", searchParams)}
         />
@@ -383,6 +383,7 @@ const PriceListTableRowActions = ({ row }: PriceListTableRowActionsProps) => {
   const { mutateAsync: deleteFn } = useAdminDeletePriceList(row.original.id)
   const { mutateAsync: updateFn } = useAdminUpdatePriceList(row.original.id)
 
+  const { t } = useTranslation()
   const prompt = usePrompt()
   const notification = useNotification()
 
@@ -462,20 +463,22 @@ const PriceListTableRowActions = ({ row }: PriceListTableRowActionsProps) => {
       <DropdownMenu.Content>
         <DropdownMenu.Item onClick={handleNavigate}>
           <PencilSquare className="text-ui-fg-subtle" />
-          <span className="ml-2">Edit</span>
+          <span className="ml-2">{t("components-edit", "Edit")}</span>
         </DropdownMenu.Item>
         {!isExpired && (
           <DropdownMenu.Item onClick={toggleStatus}>
             {isActive ? <EllipseGreySolid /> : <EllipseGreenSolid />}
             <span className="ml-2">
-              {isActive ? "Mark as draft" : "Mark as active"}
+              {isActive
+                ? t("mark-as-draft", "Mark as draft")
+                : t("mark-as-active", "Mark as active")}
             </span>
           </DropdownMenu.Item>
         )}
         <DropdownMenu.Separator />
         <DropdownMenu.Item onClick={handleDelete}>
           <Trash className="text-ui-fg-subtle" />
-          <span className="ml-2">Delete</span>
+          <span className="ml-2">{t("components-delete", "Delete")}</span>
         </DropdownMenu.Item>
       </DropdownMenu.Content>
     </DropdownMenu>

@@ -231,9 +231,9 @@ const SelectItem = ({
     }
   }, [open])
 
-  const placeholderValue = placeholder
-    ? placeholder
-    : t("filter-menu-select-item-default-placeholder", "Select filter")
+  // const placeholderValue = placeholder
+  //   ? placeholder
+  //   : t("filter-menu-select-item-default-placeholder", "Select filter")
 
   return (
     <Popover open={open} data-filter-component={true}>
@@ -288,8 +288,9 @@ const SelectItem = ({
                   {t("filter-menu-select-item-selected", "Selected")}
                 </span>
               ) : (
-                <span className="text-ui-fg-muted txt-compact-medium">
-                  {placeholderValue}
+                <span className="text-ui-fg-muted txt-compact-medium min-w-[200px]">
+                  {/* {placeholderValue} */}
+                  {t("select", "Select")}
                 </span>
               )}
             </div>

@@ -600,7 +600,9 @@ const PriceListNew = () => {
   return (
     <FocusModal open={open} onOpenChange={onModalStateChange}>
       <FocusModal.Trigger asChild>
-        <Button variant="secondary">Create New</Button>
+        <Button variant="secondary">
+          {t("components-create-new", "Create new")}
+        </Button>
       </FocusModal.Trigger>
       <ProgressTabs
         value={tab}
