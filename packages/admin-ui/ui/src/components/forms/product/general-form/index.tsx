@@ -57,12 +57,17 @@ const GeneralForm = ({ form, requireHandle = true, isGiftCard }: Props) => {
           errors={errors}
         />
       </div>
-      {/* TODO translate */}
       <p className="inter-base-regular text-grey-50 mb-large">
-        Give your {isGiftCard ? "gift card" : "product"} a short and clear
-        title.
+        {t("give-your", "", {
+          a: isGiftCard
+            ? "gift card"
+            : t("product-general-section-product", "product").toLowerCase(),
+        })}
         <br />
-        50-60 characters is the recommended length for search engines.
+        {t(
+          "give-your-second",
+          "50-60 characters is the recommended length for search engines."
+        )}
       </p>
       <div className="gap-x-large mb-large grid grid-cols-2">
         <InputField
@@ -105,10 +110,16 @@ const GeneralForm = ({ form, requireHandle = true, isGiftCard }: Props) => {
         errors={errors}
       />
       <p className="inter-base-regular text-grey-50">
-        Give your {isGiftCard ? "gift card" : "product"} a short and clear
-        description.
+        {t("give-your-description", "", {
+          a: isGiftCard
+            ? "gift card"
+            : t("product-general-section-product", "product").toLowerCase(),
+        })}
         <br />
-        120-160 characters is the recommended length for search engines.
+        {t(
+          "give-your-second",
+          "50-60 characters is the recommended length for search engines."
+        )}
       </p>
     </div>
   )

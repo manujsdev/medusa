@@ -91,6 +91,8 @@
   "batch-job-products-list": "lista de productos",
   "batch-job-success": "Satisfactorio",
   "batch-job-unsure-about-how-to-arrange-your-list": "¿No estás seguro de cómo organizar tu lista?",
+  "choose-a-collection": "Elige una colección",
+  "choose-a-type": "Elige un tipo",
   "claim-a-shipping-method-for-replacement-items-is-required": "Se requiere un método de envío para los artículos de reemplazo",
   "claim-are-you-sure-you-want-to-close": "¿Verdaderamente deseas cerrar?",
   "claim-cancel": "Cancelar",
@@ -777,6 +779,9 @@
   "gift-cards-the-best-gift-card-of-all-time": "La mejor Tarjeta de Regalo de todos los tiempos",
   "gift-cards-thumbnail": "Miniatura",
   "gift-cards-yes-delete": "Sí, eliminar",
+  "give-your": "Dale a tu {{a}} un título breve y claro.",
+  "give-your-description": "Dale a tu {{a}} una descripción breve y clara.",
+  "give-your-second": "50-60 caracteres es la longitud recomendada para los motores de búsqueda.",
   "groups": "Groupos",
   "groups-back-to-customer-groups": "Volver a Grupos de Clientes",
   "groups-cancel": "Cancelar",
@@ -1041,6 +1046,7 @@
   "orders-export-orders": "Exportar órdenes",
   "orders-success": "Satisfactorio",
   "orders-successfully-initiated-export": "Reporte iniciado correctamente",
+  "organize": "Organizar",
   "organisms-are-you-sure-you-want-to-delete": "¿Estás seguro/a de que quieres eliminar?",
   "organisms-delete-successful": "Eliminación exitosa",
   "organisms-no-cancel": "No, cancelar",
@@ -1873,6 +1879,7 @@
   "tables-yes-delete": "Sí, eliminar",
   "tables-yes-revoke": "Sí, anular",
   "tags-cancel": "Cancelar",
+  "tags-comma-separated": "Etiquetas (separadas por comas)",
   "tags-save-and-close": "Guardar y cerrar",
   "tags-save-and-go-back": "Guardar y volver",
   "tags-search": "Buscar...",
@@ -2076,5 +2083,6 @@
   "utils-tags": "etiquetas",
   "utils-types": "tipos",
   "variants-table-location": " en {{location}}",
-  "warm-and-cozy": "Calentito y acogedor..."
+  "warm-and-cozy": "Calentito y acogedor...",
+  "when-unchecked-discounts": "Si no se marca, los descuentos no se aplicarán al"
 }

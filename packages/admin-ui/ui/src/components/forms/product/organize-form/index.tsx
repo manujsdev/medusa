@@ -13,6 +13,7 @@ import {
 } from "../../../molecules/select/next-select"
 import TagInput from "../../../molecules/tag-input"
 import useOrganizeData from "./use-organize-data"
+import { useTranslation } from "react-i18next"
 
 export type OrganizeFormType = {
   type: Option | null
@@ -26,6 +27,7 @@ type Props = {
 }
 
 const OrganizeForm = ({ form }: Props) => {
+  const { t } = useTranslation()
   const { control, path, setValue } = form
   const {
     productTypeOptions,
@@ -57,11 +59,11 @@ const OrganizeForm = ({ form }: Props) => {
           render={({ field: { value, onChange } }) => {
             return (
               <NextCreateableSelect
-                label="Type"
+                label={t("components-type", "Type")}
                 onChange={onChange}
                 options={productTypeOptions}
                 value={value || null}
-                placeholder="Choose a type"
+                placeholder={t("choose-a-type", "Choose a type")}
                 onCreateOption={onCreateOption}
                 isClearable
               />
@@ -74,11 +76,11 @@ const OrganizeForm = ({ form }: Props) => {
           render={({ field: { value, onChange } }) => {
             return (
               <NextSelect
-                label="Collection"
+                label={t("conditions-collection", "Collection")}
                 onChange={onChange}
                 options={collectionOptions}
                 value={value}
-                placeholder="Choose a collection"
+                placeholder={t("choose-a-collection", "Choose a collection")}
                 isClearable
               />
             )
@@ -101,7 +103,7 @@ const OrganizeForm = ({ form }: Props) => {
               return (
                 <NestedMultiselect
                   placeholder={
-                    !!categoriesOptions?.length
+                    categoriesOptions?.length
                       ? "Choose categories"
                       : "No categories available"
                   }

@@ -56,16 +56,16 @@ const ProductGeneralSection = ({ product }: Props) => {
     },
   ]
 
-  if (isFeatureEnabled("sales_channels")) {
-    actions.splice(1, 0, {
-      label: t(
-        "product-general-section-edit-sales-channels",
-        "Edit Sales Channels"
-      ),
-      onClick: toggleChannels,
-      icon: <ChannelsIcon size={20} />,
-    })
-  }
+  // if (isFeatureEnabled("sales_channels")) {
+  //   actions.splice(1, 0, {
+  //     label: t(
+  //       "product-general-section-edit-sales-channels",
+  //       "Edit Sales Channels"
+  //     ),
+  //     onClick: toggleChannels,
+  //     icon: <ChannelsIcon size={20} />,
+  //   })
+  // }
 
   return (
     <>
@@ -92,13 +92,13 @@ const ProductGeneralSection = ({ product }: Props) => {
 
       <GeneralModal product={product} open={infoState} onClose={closeInfo} />
 
-      <FeatureToggle featureFlag="sales_channels">
+      {/* <FeatureToggle featureFlag="sales_channels">
         <ChannelsModal
           product={product}
           open={channelsState}
           onClose={closeChannels}
         />
-      </FeatureToggle>
+      </FeatureToggle> */}
     </>
   )
 }
@@ -162,7 +162,8 @@ const ProductDetails = ({ product }: Props) => {
             : t("product-general-section-false", "False")
         }
       />
-      <Detail
+      {/* TODO: JSON */}
+      {/* <Detail
         title={t("product-general-section-metadata", "Metadata")}
         value={
           Object.entries(product.metadata || {}).length > 0
@@ -171,7 +172,7 @@ const ProductDetails = ({ product }: Props) => {
               })
             : undefined
         }
-      />
+      /> */}
     </div>
   )
 }

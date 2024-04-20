@@ -111,7 +111,7 @@ const GeneralModal = ({ product, open, onClose }: Props) => {
             />
             <div className="my-xlarge">
               <h2 className="inter-base-semibold mb-base">
-                Organize{" "}
+                {t("organize", "Organize")}{" "}
                 {product.is_giftcard
                   ? t("gift-card", "Gift Card")
                   : t("product-general-section-product", "Product")}
@@ -122,12 +122,13 @@ const GeneralModal = ({ product, open, onClose }: Props) => {
               form={nestedForm(form, "discountable")}
               isGiftCard={product.is_giftcard}
             />
-            <div className="mt-xlarge">
+            {/* TODO: JSON */}
+            {/* <div className="mt-xlarge">
               <h2 className="inter-base-semibold mb-base">
                 {t("product-general-section-metadata", "Metadata")}
               </h2>
               <MetadataForm form={nestedForm(form, "metadata")} />
-            </div>
+            </div> */}
           </Modal.Content>
           <Modal.Footer>
             <div className="flex w-full justify-end gap-x-2">
