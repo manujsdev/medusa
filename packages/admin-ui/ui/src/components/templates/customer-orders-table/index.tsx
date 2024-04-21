@@ -87,7 +87,7 @@ const CustomerOrdersTable = ({ id }: Props) => {
           count: count!,
           offset,
           pageSize: offset + rows.length,
-          title: t("customer-orders-table-orders", "Orders"),
+          title: t("orders", "Orders"),
           currentPage: pageIndex + 1,
           pageCount: pageCount,
           nextPage: handleNext,

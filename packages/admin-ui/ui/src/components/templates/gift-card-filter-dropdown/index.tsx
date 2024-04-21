@@ -131,7 +131,7 @@ const OrderFilters = ({
         }
       >
         <FilterDropdownItem
-          filterTitle={t("gift-card-filter-dropdown-status", "Status")}
+          filterTitle={t("status", "Status")}
           options={statusFilters}
           filters={tempState.status.filter}
           open={tempState.status.open}

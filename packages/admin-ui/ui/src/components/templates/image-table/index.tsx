@@ -74,7 +74,7 @@ const ImageTable = ({ data, form, onDelete }: ImageTableProps) => {
       {
         Header: () => (
           <div className="flex items-center justify-center gap-x-[6px]">
-            <span>{t("image-table-thumbnail", "Thumbnail")}</span>
+            <span>{t("thumbnail", "Thumbnail")}</span>
             <IconTooltip
               content={t(
                 "image-table-select-thumbnail-image-for-product",

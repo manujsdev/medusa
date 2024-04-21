@@ -41,14 +41,8 @@ import DetailsIcon from "../../../components/fundamentals/details-icon"
 import CancelIcon from "../../../components/fundamentals/icons/cancel-icon"
 import ClipboardCopyIcon from "../../../components/fundamentals/icons/clipboard-copy-icon"
 import CornerDownRightIcon from "../../../components/fundamentals/icons/corner-down-right-icon"
-import DollarSignIcon from "../../../components/fundamentals/icons/dollar-sign-icon"
-import MailIcon from "../../../components/fundamentals/icons/mail-icon"
-import RefreshIcon from "../../../components/fundamentals/icons/refresh-icon"
-import TruckIcon from "../../../components/fundamentals/icons/truck-icon"
 import { ActionType } from "../../../components/molecules/actionables"
-import JSONView from "../../../components/molecules/json-view"
 import BodyCard from "../../../components/organisms/body-card"
-import RawJSON from "../../../components/organisms/raw-json"
 import Timeline from "../../../components/organisms/timeline"
 import { AddressType } from "../../../components/templates/address-form"
 import TransferOrdersModal from "../../../components/templates/transfer-orders-modal"
@@ -554,7 +548,7 @@ const OrderDetails = () => {
                     <div className="mt-6 flex space-x-6 divide-x">
                       <div className="flex flex-col">
                         <div className="inter-small-regular text-grey-50 mb-1">
-                          {t("details-contact", "Contact")}
+                          {t("contact", "Contact")}
                         </div>
                         <div className="inter-small-regular flex flex-col">
                           <span>{order.email}</span>

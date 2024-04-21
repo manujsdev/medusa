@@ -101,7 +101,7 @@ const ThumbnailModal = ({ product, open, onClose }: Props) => {
         <form onSubmit={onSubmit}>
           <Modal.Content>
             <h2 className="inter-large-semibold mb-2xsmall">
-              {t("product-thumbnail-section-thumbnail", "Thumbnail")}
+              {t("thumbnail", "Thumbnail")}
             </h2>
             <p className="inter-base-regular text-grey-50 mb-large">
               {t(

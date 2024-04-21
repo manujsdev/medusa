@@ -3,8 +3,10 @@ import { Link } from "react-router-dom"
 import { Column } from "react-table"
 import Table from "../../molecules/table"
 import { decideStatus, SimpleProductType } from "./utils"
+import { useTranslation } from "react-i18next"
 
 const useViewProductColumns = () => {
+  const { t } = useTranslation()
   const columns: Column<SimpleProductType>[] = useMemo(
     () => [
       {
@@ -25,7 +27,7 @@ const useViewProductColumns = () => {
               {value ? (
                 <img
                   src={value}
-                  alt="Thumbnail"
+                  alt={t("thumbnail", "Thumbnail")}
                   className="h-full w-full object-cover"
                 />
               ) : null}

@@ -79,7 +79,7 @@ function EditSalesChannel(props: EditSalesChannelProps) {
               onChange={(e) => setName(e.target.value)}
             />
             <InputField
-              label={t("form-description", "Description")}
+              label={t("description", "Description")}
               name="description"
               value={description!}
               onChange={(e) => setDescription(e.target.value)}

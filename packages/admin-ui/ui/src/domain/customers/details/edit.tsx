@@ -3,7 +3,7 @@ import { useAdminUpdateCustomer } from "medusa-react"
 import { useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { useTranslation } from "react-i18next"
-import MetadataForm, {
+import {
   getMetadataFormValues,
   getSubmittableMetadata,
   MetadataFormType,
@@ -14,7 +14,6 @@ import InputField from "../../../components/molecules/input"
 import Modal from "../../../components/molecules/modal"
 import useNotification from "../../../hooks/use-notification"
 import { getErrorMessage } from "../../../utils/error-messages"
-import { nestedForm } from "../../../utils/nested-form"
 import { validateEmail } from "../../../utils/validate-email"
 
 type EditCustomerModalProps = {
@@ -117,7 +116,9 @@ const EditCustomerModal = ({
               </div>
             </div>
             <div>
-              <h2 className="inter-base-semibold text-grey-90 mb-4">Contact</h2>
+              <h2 className="inter-base-semibold text-grey-90 mb-4">
+                {t("contact", "Contact")}
+              </h2>
               <div className="flex space-x-2">
                 <InputField
                   label={t("details-email", "Email")}

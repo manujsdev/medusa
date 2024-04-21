@@ -53,9 +53,7 @@ const COLUMNS = [
     },
   },
   {
-    Header: (
-      <Translation>{(t) => t("tables-description", "Description")}</Translation>
-    ),
+    Header: <Translation>{(t) => t("description", "Description")}</Translation>,
     accessor: "description",
     Cell: ({ row }) => {
       return (

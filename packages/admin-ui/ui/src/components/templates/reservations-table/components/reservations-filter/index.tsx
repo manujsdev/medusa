@@ -20,10 +20,12 @@ import { User } from "@medusajs/medusa"
 import clsx from "clsx"
 import moment from "moment"
 import { removeNullish } from "../../../../../utils/remove-nullish"
+import { useTranslation } from "react-i18next"
 
 type PasswordlessUser = Omit<User, "password_hash">
 
 const ReservationsFilters = ({ filters, submitFilters, clearFilters }) => {
+  const { t } = useTranslation()
   const [tempState, setTempState] = useState(filters)
 
   useEffect(() => {
@@ -72,7 +74,7 @@ const ReservationsFilters = ({ filters, submitFilters, clearFilters }) => {
             }}
           />
           <TextFilterItem
-            title="Description"
+            title={t("description", "Description")}
             value={tempState.additionalFilters.description}
             options={[
               { label: "Equals", value: "equals" },
@@ -220,7 +222,7 @@ const SearchableFilterInventoryItem = ({
               selectedItems.size === 0 ? null : (
                 <div
                   onClick={reset}
-                  className="bg-grey-10 border-grey-20 text-grey-40 rounded-rounded gap-x-2xsmall mr-xsmall flex cursor-pointer items-center border py-0.5 pr-1 pl-2"
+                  className="bg-grey-10 border-grey-20 text-grey-40 rounded-rounded gap-x-2xsmall mr-xsmall flex cursor-pointer items-center border py-0.5 pl-2 pr-1"
                 >
                   <span className="text-grey-50">{selectedItems.size}</span>
                   <CrossIcon size={16} />
@@ -279,7 +281,7 @@ const InventoryItemItem = ({
   <div
     key={key}
     onClick={onClick}
-    className="hover:bg-grey-10 rounded-rounded flex items-center py-1.5 px-2"
+    className="hover:bg-grey-10 rounded-rounded flex items-center px-2 py-1.5"
   >
     <div className="mr-2 flex h-[20px] w-[20px] items-center">
       {selected && <CheckIcon size={16} color="#111827" />}
@@ -376,7 +378,7 @@ const CreatedByFilterItem = ({
               selectedUsers.size === 0 ? null : (
                 <div
                   onClick={reset}
-                  className="bg-grey-10 border-grey-20 text-grey-40 rounded-rounded gap-x-2xsmall mr-xsmall flex cursor-pointer items-center border py-0.5 pr-1 pl-2"
+                  className="bg-grey-10 border-grey-20 text-grey-40 rounded-rounded gap-x-2xsmall mr-xsmall flex cursor-pointer items-center border py-0.5 pl-2 pr-1"
                 >
                   <span className="text-grey-50">{selectedUsers.size}</span>
                   <CrossIcon size={16} />
@@ -431,7 +433,7 @@ const CreatedByItem = ({
     <div
       key={key}
       onClick={onClick}
-      className="hover:bg-grey-10 inter-small-regular rounded-rounded flex items-center py-1.5 px-2"
+      className="hover:bg-grey-10 inter-small-regular rounded-rounded flex items-center px-2 py-1.5"
     >
       <div className="inter-small-regular mr-2 flex h-[20px] w-[20px] items-center">
         {selected && <CheckIcon size={16} color="#111827" />}
@@ -842,7 +844,7 @@ const PopoverSelect = ({
         {options.map((o, i) => (
           <div
             key={i}
-            className="hover:bg-grey-5 rounded-rounded mb-1 flex py-1.5 px-2"
+            className="hover:bg-grey-5 rounded-rounded mb-1 flex px-2 py-1.5"
             onClick={() => onChange(o)}
           >
             <div className="mr-2 h-[20px] w-[20px]">
@@ -881,7 +883,7 @@ const CollapsibleWrapper = ({
       >
         <RadixCollapsible.Trigger
           className={clsx(
-            "text-grey-50 flex w-full cursor-pointer items-center justify-between rounded py-1.5 px-3"
+            "text-grey-50 flex w-full cursor-pointer items-center justify-between rounded px-3 py-1.5"
           )}
         >
           <p>{title}</p>

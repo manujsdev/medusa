@@ -235,7 +235,7 @@ const UserTable: React.FC<UserTableProps> = ({
       ],
     },
     {
-      title: t("templates-status", "Status"),
+      title: t("status", "Status"),
       options: [
         {
           title: t("templates-all", "All"),

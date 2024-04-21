@@ -22,12 +22,12 @@ export const usePriceListTableColumns = () => {
         ),
       },
       {
-        Header: t("price-list-table-description", "Description"),
+        Header: t("description", "Description"),
         accessor: "description",
         Cell: ({ cell: { value } }) => <Table.Cell>{value}</Table.Cell>,
       },
       {
-        Header: t("price-list-table-status", "Status"),
+        Header: t("status", "Status"),
         accessor: "status",
         Cell: ({ row: { original } }) => (
           <Table.Cell>{getPriceListStatus(original)}</Table.Cell>

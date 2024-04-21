@@ -201,7 +201,7 @@ function CreateProductCategory(props: CreateProductCategoryProps) {
 
           <div className="mb-8">
             <TextArea
-              label={t("modals-description", "Description")}
+              label={t("description", "Description")}
               placeholder={
                 t(
                   "modals-give-this-category-a-description",
@@ -222,7 +222,7 @@ function CreateProductCategory(props: CreateProductCategoryProps) {
                   return (
                     <NextSelect
                       {...field}
-                      label={t("modals-status", "Status") as string}
+                      label={t("status", "Status")}
                       placeholder="Choose status"
                       options={statusOptions(t)}
                       value={

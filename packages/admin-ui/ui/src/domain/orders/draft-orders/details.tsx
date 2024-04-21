@@ -423,7 +423,7 @@ const DraftOrderDetails = () => {
                 <div className="mt-6 flex space-x-6 divide-x">
                   <div className="flex flex-col">
                     <div className="inter-small-regular text-grey-50 mb-1">
-                      {t("draft-orders-contact", "Contact")}
+                      {t("contact", "Contact")}
                     </div>
                     <div className="inter-small-regular flex flex-col">
                       <span>{cart?.email}</span>

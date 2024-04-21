@@ -72,7 +72,7 @@ const CurrencySettings = () => {
       />
       <div className="gap-base grid grid-cols-3">
         <div className="gap-y-xsmall col-span-2 flex flex-col ">
-          <Section title="Currencies">
+          <Section title={t("currencies", "Currencies")}>
             <p className="text-grey-50 inter-base-regular mt-2xsmall">
               {t(
                 "currencies-manage-the-markets-that-you-will-operate-within",

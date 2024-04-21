@@ -263,7 +263,7 @@ const PriceListPricesSection = ({ priceList }: PriceListPricesSectionProps) => {
 
   return (
     <Container className="p-0">
-      <div className="flex items-center justify-between px-8 pt-6 pb-4">
+      <div className="flex items-center justify-between px-8 pb-4 pt-6">
         <Heading>{t("price-list-prices-section-heading", "Prices")}</Heading>
         <div className="flex items-center gap-x-2">
           <ProductFilterMenu
@@ -349,7 +349,7 @@ const PriceListPricesSection = ({ priceList }: PriceListPricesSectionProps) => {
               return (
                 <Table.Row
                   key={headerGroup.id}
-                  className="[&_th]:w-1/3 [&_th:first-of-type]:w-[1%] [&_th:first-of-type]:whitespace-nowrap"
+                  className="[&_th:first-of-type]:w-[1%] [&_th:first-of-type]:whitespace-nowrap [&_th]:w-1/3"
                 >
                   {headerGroup.headers.map((header) => {
                     return (
@@ -536,7 +536,7 @@ const usePriceListProudctColumns = ({
         cell: (info) => info.getValue()?.title ?? "-",
       }),
       columnHelper.accessor("variants", {
-        header: () => t("price-list-prices-section-table-variants", "Variants"),
+        header: () => t("variants", "Variants"),
         cell: (info) => {
           const variants = info.getValue()
           return variants?.length ?? "-"

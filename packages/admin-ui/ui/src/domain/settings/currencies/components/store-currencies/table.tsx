@@ -3,6 +3,7 @@ import React, { useEffect } from "react"
 import { TableInstance } from "react-table"
 import Table from "../../../../../components/molecules/table"
 import TableContainer from "../../../../../components/organisms/table-container"
+import { useTranslation } from "react-i18next"
 
 type Props = {
   isLoading?: boolean
@@ -24,6 +25,7 @@ const CurrenciesTable = ({
   tableAction,
   count,
 }: Props) => {
+  const { t } = useTranslation()
   const {
     rows,
     headerGroups,
@@ -67,7 +69,7 @@ const CurrenciesTable = ({
         count: count,
         offset: offset,
         pageSize: offset + rows.length,
-        title: "Currencies",
+        title: t("currencies", "Currencies"),
         currentPage: pageIndex + 1,
         pageCount: pageCount,
         nextPage: handleNext,

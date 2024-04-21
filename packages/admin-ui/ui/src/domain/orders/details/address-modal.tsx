@@ -150,7 +150,7 @@ const AddressModal = ({
             <div className="gap-y-xlarge flex flex-col">
               <div>
                 <h2 className="inter-base-semibold mb-base">
-                  {t("details-contact", "Contact")}
+                  {t("contact", "Contact")}
                 </h2>
                 <AddressContactForm form={nestedForm(form, "contact")} />
               </div>

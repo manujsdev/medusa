@@ -167,7 +167,7 @@ const General: React.FC<GeneralProps> = ({ discount }) => {
             </span>
           </div>
           <TextArea
-            label={t("sections-description", "Description")}
+            label={t("description", "Description")}
             required
             placeholder={t("sections-summer-sale-2022", "Summer Sale 2022")}
             rows={1}

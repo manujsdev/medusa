@@ -17,7 +17,7 @@ const useReservationsTableColumns = () => {
         Cell: ({ cell: { value } }) => value ?? "-",
       },
       {
-        Header: t("reservations-table-description", "Description"),
+        Header: t("description", "Description"),
         accessor: "description",
         Cell: ({ cell: { value } }) => value,
       },

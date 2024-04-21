@@ -291,10 +291,10 @@ const EditReservationDrawer = ({
                   inter-base-regular
                   mt-6
                   grid border-collapse grid-cols-2 grid-rows-3 
-                  [&>*]:border-r [&>*]:border-b [&>*]:py-2 
+                  [&>*:nth-child(-n+2)]:border-t [&>*:nth-child(even)]:pr-4 [&>*:nth-child(even)]:text-right 
                   [&>*:nth-child(odd)]:border-l [&>*:nth-child(odd)]:pl-4 
-                  [&>*:nth-child(even)]:pr-4 [&>*:nth-child(even)]:text-right 
-                  [&>*:nth-child(-n+2)]:border-t`}
+                  [&>*]:border-b [&>*]:border-r 
+                  [&>*]:py-2`}
                   >
                     <div className="rounded-tl-rounded">Item</div>
                     <div className="rounded-tr-rounded flex justify-end space-x-3">
@@ -339,7 +339,7 @@ const EditReservationDrawer = ({
                 </div>
                 <div className="border-grey-20 inter-base-regular border-t pt-6">
                   <p className="inter-base-semibold">
-                    {t("reservation-description", "Description")}
+                    {t("description", "Description")}
                   </p>
                   <p className="text-grey-50 mb-6">
                     {t(
@@ -349,7 +349,7 @@ const EditReservationDrawer = ({
                   </p>
                   <InputField
                     {...register("item.description")}
-                    placeholder={t("reservation-description", "Description")}
+                    placeholder={t("description", "Description")}
                   />
                 </div>
                 <div className="border-grey border-grey-20 w-full items-center border-t pt-6">
@@ -386,7 +386,7 @@ const EditReservationDrawer = ({
               </Button>
             </div>
           </div>
-          <div className="gap-x-xsmall flex w-full justify-end border-t px-8 pt-4 pb-6">
+          <div className="gap-x-xsmall flex w-full justify-end border-t px-8 pb-6 pt-4">
             <Button
               variant="ghost"
               size="small"

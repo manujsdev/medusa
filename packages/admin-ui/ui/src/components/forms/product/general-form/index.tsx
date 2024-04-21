@@ -100,9 +100,11 @@ const GeneralForm = ({ form, requireHandle = true, isGiftCard }: Props) => {
         />
       </div>
       <TextArea
-        label="Description"
+        label={t("description", "Description")}
         placeholder={
-          isGiftCard ? "The gift card is..." : "A warm and cozy jacket..."
+          isGiftCard
+            ? "The gift card is..."
+            : t("warm-and-cozy-jacket", "A warm and cozy jacket...")
         }
         rows={3}
         className="mb-small"

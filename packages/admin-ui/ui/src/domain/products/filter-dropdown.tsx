@@ -129,7 +129,7 @@ const ProductsFilter = ({
         }
       >
         <FilterDropdownItem
-          filterTitle={t("products-status", "Status")}
+          filterTitle={t("status", "Status")}
           options={statusFilters}
           filters={tempState.status.filter}
           open={tempState.status.open}
@@ -195,7 +195,7 @@ const ProductsFilter = ({
               className="pl-6"
             >
               <TagInput
-                className="pt-0 pb-1"
+                className="pb-1 pt-0"
                 showLabel={false}
                 placeholder={t("products-spring-summer", "Spring, summer...")}
                 values={(tempState.tags.filter || [])

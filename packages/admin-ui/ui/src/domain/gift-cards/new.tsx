@@ -187,7 +187,7 @@ const NewGiftCard = ({ onClose }: NewGiftCardProps) => {
                 {...register("title", { required: true })}
               />
               <TextArea
-                label={t("gift-cards-description", "Description")}
+                label={t("description", "Description")}
                 placeholder={t(
                   "gift-cards-the-best-gift-card-of-all-time",
                   "The best Gift Card of all time"
@@ -197,7 +197,7 @@ const NewGiftCard = ({ onClose }: NewGiftCardProps) => {
             </div>
             <div className="mt-xlarge">
               <h3 className="inter-base-semibold">
-                {t("gift-cards-thumbnail", "Thumbnail")}
+                {t("thumbnail", "Thumbnail")}
               </h3>
               <div className="mt-base h-[80px]">
                 {thumbnail ? (

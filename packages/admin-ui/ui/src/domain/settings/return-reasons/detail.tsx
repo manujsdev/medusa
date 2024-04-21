@@ -127,7 +127,7 @@ const ReturnReasonDetail = ({ reason }: ReturnReasonDetailsProps) => {
           />
           <Input
             {...register("description")}
-            label={t("return-reasons-description", "Description")}
+            label={t("description", "Description")}
             className="mt-base"
             placeholder={t(
               "return-reasons-customer-received-the-wrong-size",

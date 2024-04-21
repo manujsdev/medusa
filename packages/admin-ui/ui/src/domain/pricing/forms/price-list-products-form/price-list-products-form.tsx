@@ -161,7 +161,7 @@ const usePriceListProductsFormColumns = () => {
         },
       }),
       columnHelper.accessor("status", {
-        header: () => t("price-list-products-form-status-label", "Status"),
+        header: () => t("status", "Status"),
         cell: (info) => {
           const status = info.getValue()
 

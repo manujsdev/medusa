@@ -96,10 +96,10 @@ const ReservationForm: React.FC<Props> = ({ form }) => {
             bg-grey-5 text-grey-50 border-grey-20 
             mt-8
             grid border-collapse grid-cols-2 grid-rows-5 
-            [&>*]:border-r [&>*]:border-b [&>*]:py-2 
+            [&>*:nth-child(-n+2)]:border-t [&>*:nth-child(even)]:pr-4 [&>*:nth-child(even)]:text-right 
             [&>*:nth-child(odd)]:border-l [&>*:nth-child(odd)]:pl-4 
-            [&>*:nth-child(even)]:pr-4 [&>*:nth-child(even)]:text-right 
-            [&>*:nth-child(-n+2)]:border-t`}
+            [&>*]:border-b [&>*]:border-r 
+            [&>*]:py-2`}
             >
               <div className="rounded-tl-rounded">
                 {t("reservation-form-item", "Item")}
@@ -151,7 +151,7 @@ const ReservationForm: React.FC<Props> = ({ form }) => {
       <div className="border-grey border-grey-20 grid w-full grid-cols-2 items-center border-t py-6">
         <div>
           <p className="inter-base-semibold mb-1">
-            {t("reservation-form-description", "Description")}
+            {t("description", "Description")}
           </p>
           <p className="text-grey-50">
             {t(
@@ -162,7 +162,7 @@ const ReservationForm: React.FC<Props> = ({ form }) => {
         </div>
         <InputField
           {...register(path("description"))}
-          placeholder={t("reservation-form-description", "Description")}
+          placeholder={t("description", "Description")}
         />
       </div>
     </div>

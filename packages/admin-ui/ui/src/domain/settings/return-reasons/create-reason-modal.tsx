@@ -111,7 +111,7 @@ const CreateReturnReasonModal = ({
               className="mt-large"
               rows={3}
               {...register("description")}
-              label={t("return-reasons-description", "Description")}
+              label={t("description", "Description")}
               placeholder={t(
                 "return-reasons-customer-received-the-wrong-size",
                 "Customer received the wrong size"

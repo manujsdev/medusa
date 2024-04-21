@@ -7,14 +7,10 @@ import SettingContainer from "../../components/extensions/setting-container"
 import SettingsPageErrorElement from "../../components/extensions/setting-container/setting-error-element"
 import FeatureToggle from "../../components/fundamentals/feature-toggle"
 import ArrowUTurnLeft from "../../components/fundamentals/icons/arrow-uturn-left"
-import ChannelsIcon from "../../components/fundamentals/icons/channels-icon"
 import CoinsIcon from "../../components/fundamentals/icons/coins-icon"
-import CrosshairIcon from "../../components/fundamentals/icons/crosshair-icon"
 import GearIcon from "../../components/fundamentals/icons/gear-icon"
 import HappyIcon from "../../components/fundamentals/icons/happy-icon"
-import KeyIcon from "../../components/fundamentals/icons/key-icon"
 import MapPinIcon from "../../components/fundamentals/icons/map-pin-icon"
-import TaxesIcon from "../../components/fundamentals/icons/taxes-icon"
 import UsersIcon from "../../components/fundamentals/icons/users-icon"
 import { useSettings } from "../../providers/setting-provider"
 import CurrencySettings from "./currencies"
@@ -74,7 +70,7 @@ const SettingsIndex = () => {
     //   feature_flag: "publishable_api_keys",
     // },
     {
-      heading: t("settings-currencies", "Currencies"),
+      heading: t("currencies", "Currencies"),
       description: t(
         "settings-currencies-desc",
         "Manage the currencies of your store"

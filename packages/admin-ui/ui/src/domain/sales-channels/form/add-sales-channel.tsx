@@ -42,7 +42,7 @@ function General(props: GeneralProps) {
       </div>
       <div className="flex-1">
         <InputField
-          label={t("form-description", "Description")}
+          label={t("description", "Description")}
           type="string"
           name="description"
           placeholder={t(

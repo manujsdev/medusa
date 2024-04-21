@@ -2,8 +2,10 @@ import { useMemo } from "react"
 import { Column } from "react-table"
 import Table from "../../molecules/table"
 import { decideStatus, SimpleProductType } from "./utils"
+import { useTranslation } from "react-i18next"
 
 const useCollectionProductColumns = () => {
+  const { t } = useTranslation()
   const columns: Column<SimpleProductType>[] = useMemo(
     () => [
       {
@@ -14,7 +16,7 @@ const useCollectionProductColumns = () => {
               {value ? (
                 <img
                   src={value}
-                  alt="Thumbnail"
+                  alt={t("thumbnail", "Thumbnail")}
                   className="h-full w-full object-cover"
                 />
               ) : null}

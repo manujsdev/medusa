@@ -3,6 +3,7 @@ import SectionCollapsible from "../section-collapsible"
 import { useAdminOrders } from "medusa-react"
 import useKeyboardNavigationList from "../use-keyboard-navigation-list"
 import { Link } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 
 type OrderResultsProps = {
   orders: ReturnType<typeof useAdminOrders>["orders"]
@@ -17,8 +18,12 @@ const OrderResults = ({
   offset,
   selected,
 }: OrderResultsProps) => {
+  const { t } = useTranslation()
   return orders.length > 0 ? (
-    <SectionCollapsible title={"Orders"} length={orders?.length || 0}>
+    <SectionCollapsible
+      title={t("orders", "Orders")}
+      length={orders?.length || 0}
+    >
       <div className="mt-large">
         <div className="flex flex-col">
           {orders?.map((order, index) => (

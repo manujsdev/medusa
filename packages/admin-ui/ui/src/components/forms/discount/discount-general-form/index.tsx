@@ -12,6 +12,7 @@ import InputField from "../../../molecules/input"
 import { NextSelect } from "../../../molecules/select/next-select"
 import TextArea from "../../../molecules/textarea"
 import PriceFormInput from "../../general/prices-form/price-form-input"
+import { useTranslation } from "react-i18next"
 
 type DiscountRegionOption = Option & {
   currency_code: string
@@ -42,6 +43,7 @@ const DiscountGeneralForm = ({
   type,
   isEdit,
 }: DiscountGeneralFormProps) => {
+  const { t } = useTranslation()
   const {
     register,
     path,
@@ -153,7 +155,7 @@ const DiscountGeneralForm = ({
       </div>
       <div>
         <TextArea
-          label="Description"
+          label={t("description", "Description")}
           errors={errors}
           required
           {...register(path("description"), {

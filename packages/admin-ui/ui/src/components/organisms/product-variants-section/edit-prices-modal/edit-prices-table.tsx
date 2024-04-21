@@ -740,7 +740,7 @@ function EditPricesTable(props: EditPricesTableProps) {
                 {props.product.thumbnail && (
                   <img
                     src={props.product.thumbnail}
-                    alt="Thumbnail"
+                    alt={t("thumbnail", "Thumbnail")}
                     className="h-[22px] w-[16px] rounded"
                   />
                 )}

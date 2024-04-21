@@ -121,7 +121,7 @@ export const usePromotionTableColumns = () => {
         ),
       },
       {
-        Header: t("discount-table-description", "Description"),
+        Header: t("description", "Description"),
         accessor: "rule.description",
         Cell: ({ cell: { value } }) => value,
       },
@@ -146,7 +146,7 @@ export const usePromotionTableColumns = () => {
         ),
       },
       {
-        Header: t("discount-table-status", "Status"),
+        Header: t("status", "Status"),
         accessor: "ends_at",
         Cell: ({ row: { original } }) => (
           <div>{getPromotionStatusDot(original, t)}</div>

@@ -103,7 +103,7 @@ const PriceListTableFilters = () => {
     <FilterMenu onClearFilters={onClearFilters}>
       <FilterMenu.Content>
         <FilterMenu.SelectItem
-          name="Status"
+          name={t("status", "Status")}
           onChange={onStatusChange}
           options={[
             { label: t("templates-active", "Active"), value: "active" },
@@ -170,7 +170,7 @@ const PriceListOverview = () => {
       cell: (info) => info.getValue(),
     }),
     columnHelper.accessor("description", {
-      header: t("price-table-description", "Description"),
+      header: t("description", "Description"),
       cell: (info) => (
         <span className="overflow-hidden text-ellipsis whitespace-nowrap">
           {info.getValue()}
@@ -178,7 +178,7 @@ const PriceListOverview = () => {
       ),
     }),
     columnHelper.accessor("status", {
-      header: t("price-table-status", "Status"),
+      header: t("status", "Status"),
       cell: ({ getValue, row }) => {
         const startsAt = row.original.starts_at
         const endsAt = row.original.ends_at

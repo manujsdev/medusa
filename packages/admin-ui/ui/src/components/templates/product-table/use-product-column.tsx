@@ -88,7 +88,7 @@ const useProductTableColumn = ({ setTileView, setListView, showList }) => {
         },
       },
       {
-        Header: t("product-table-status", "Status"),
+        Header: t("status", "Status"),
         accessor: "status",
         Cell: ({ cell: { value } }) => getProductStatus(value),
       },

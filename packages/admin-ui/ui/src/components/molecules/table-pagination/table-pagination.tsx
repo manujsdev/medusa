@@ -4,6 +4,7 @@ import { useMemo } from "react"
 import Button from "../../fundamentals/button"
 import ArrowLeftIcon from "../../fundamentals/icons/arrow-left-icon"
 import ArrowRightIcon from "../../fundamentals/icons/arrow-right-icon"
+import { useTranslation } from "react-i18next"
 
 type Props<T> = {
   count?: number
@@ -19,6 +20,7 @@ export const TablePagination = <T,>({
   table,
   className,
 }: Props<T>) => {
+  const { t } = useTranslation()
   const {
     getState,
     getPageCount,
@@ -45,7 +47,10 @@ export const TablePagination = <T,>({
       )}
     >
       <div>
-        <p>{`${from} – ${to} of ${count} results`}</p>
+        <p>{`${from} – ${to} ${t("of", "of")} ${count} ${t(
+          "paginate-results",
+          "results"
+        )}`}</p>
       </div>
       <div className="gap-x-small flex items-center">
         <p>{`${getState().pagination.pageIndex + 1} of ${getPageCount()}`}</p>

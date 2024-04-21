@@ -25,7 +25,7 @@ const ProductAttributesSection = ({ product }: Props) => {
   return (
     <>
       <Section
-        title={t("product-attributes-section-title", "Attributes")}
+        title={t("attributes", "Attributes")}
         actions={actions}
         forceDropdown
       >

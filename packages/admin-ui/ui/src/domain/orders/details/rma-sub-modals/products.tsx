@@ -88,7 +88,7 @@ const RMASelectProductSubModal: React.FC<RMASelectProductSubModalProps> = ({
         },
       },
       {
-        Header: t("rma-sub-modals-status", "Status"),
+        Header: t("status", "Status"),
         accessor: "status",
         Cell: ({ row: { original } }) => (
           <StatusIndicator

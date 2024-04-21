@@ -98,7 +98,7 @@ const COLUMNS: Column<PublishableApiKey>[] = [
     Header: (
       <div className="text-small font-semibold text-gray-500">
         {" "}
-        <Translation>{(t) => t("tables-status", "Status")}</Translation>
+        <Translation>{(t) => t("status", "Status")}</Translation>
       </div>
     ),
     Cell: ({ row: { original } }) => {

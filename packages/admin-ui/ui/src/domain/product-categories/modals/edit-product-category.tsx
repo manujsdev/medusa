@@ -177,7 +177,7 @@ function EditProductCategoriesSideModal(
           />
 
           <TextArea
-            label={t("modals-description", "Description")}
+            label={t("description", "Description")}
             className="my-6"
             placeholder={
               t(
@@ -196,7 +196,7 @@ function EditProductCategoriesSideModal(
               return (
                 <NextSelect
                   {...field}
-                  label={t("modals-status", "Status") as string}
+                  label={t("status", "Status")}
                   placeholder="Choose status"
                   options={statusOptions(t)}
                   value={

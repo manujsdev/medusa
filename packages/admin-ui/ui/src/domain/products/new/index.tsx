@@ -294,7 +294,10 @@ const NewProduct = ({ onClose }: Props) => {
                   <DiscountableForm form={nestedForm(form, "discounted")} />
                 </div>
               </Accordion.Item>
-              <Accordion.Item title="Organize" value="organize">
+              <Accordion.Item
+                title={t("organize", "Organize")}
+                value="organize"
+              >
                 <p className="inter-base-regular text-grey-50">
                   {t(
                     "new-to-start-selling-all-you-need-is-a-name-and-a-price",
@@ -317,7 +320,10 @@ const NewProduct = ({ onClose }: Props) => {
                   </div>
                 </div>
               </Accordion.Item>
-              <Accordion.Item title="Variants" value="variants">
+              <Accordion.Item
+                title={t("variants", "Variants")}
+                value="variants"
+              >
                 <p className="inter-base-regular text-grey-50">
                   {t(
                     "new-add-variations-of-this-product",
@@ -337,7 +343,10 @@ const NewProduct = ({ onClose }: Props) => {
                   />
                 </div>
               </Accordion.Item>
-              <Accordion.Item title="Attributes" value="attributes">
+              <Accordion.Item
+                title={t("attributes", "Attributes")}
+                value="attributes"
+              >
                 <p className="inter-base-regular text-grey-50">
                   {t(
                     "new-used-for-shipping-and-customs-purposes",
@@ -357,7 +366,10 @@ const NewProduct = ({ onClose }: Props) => {
                   <CustomsForm form={nestedForm(form, "customs")} />
                 </div>
               </Accordion.Item>
-              <Accordion.Item title="Thumbnail" value="thumbnail">
+              <Accordion.Item
+                title={t("thumbnail", "Thumbnail")}
+                value="thumbnail"
+              >
                 <p className="inter-base-regular mb-large text-grey-50">
                   {t(
                     "new-used-to-represent-your-product-during-checkout-social-sharing-and-more",

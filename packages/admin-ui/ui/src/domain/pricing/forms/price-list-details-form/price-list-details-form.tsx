@@ -186,12 +186,7 @@ const PriceListGeneral = ({
         render={({ field }) => {
           return (
             <Form.Item>
-              <Form.Label>
-                {t(
-                  "price-list-details-form-general-description-label",
-                  "Description"
-                )}
-              </Form.Label>
+              <Form.Label>{t("description", "Description")}</Form.Label>
               <Form.Control>
                 <Textarea
                   {...field}

@@ -1393,10 +1393,7 @@ const PriceListProductPricesForm = ({
           <DropdownMenu.Trigger asChild>
             <Button variant="secondary" type="button">
               <Adjustments className="text-ui-fg-subtle" />
-              {t(
-                "price-list-product-prices-form-column-visibility-button",
-                "Currencies"
-              )}
+              {t("currencies", "Currencies")}
             </Button>
           </DropdownMenu.Trigger>
           <DropdownMenu.Content
@@ -1404,10 +1401,7 @@ const PriceListProductPricesForm = ({
             collisionPadding={16}
           >
             <DropdownMenu.Label>
-              {t(
-                "price-list-product-prices-form-column-visibility-currencies-label",
-                "Currencies"
-              )}
+              {t("currencies", "Currencies")}
             </DropdownMenu.Label>
             {currencies.map((currency) => {
               return (

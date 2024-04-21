@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from "react"
 import Actionables, { ActionType } from "../../molecules/actionables"
+import { useTranslation } from "react-i18next"
 
 type BannerCardProps = PropsWithChildren<{
   actions?: ActionType[]
@@ -19,6 +20,7 @@ const BannerCard: React.FC<BannerCardProps> & {
   Description: React.FC<BannerCardDescriptionProps>
   Footer: React.FC<PropsWithChildren>
 } = ({ title, thumbnail, actions, children }) => {
+  const { t } = useTranslation()
   return (
     <div className="rounded-rounded bg-grey-0 border-grey-20 p-base medium:p-xlarge w-full border">
       <div className="gap-large flex items-start">
@@ -26,7 +28,7 @@ const BannerCard: React.FC<BannerCardProps> & {
           <div className="rounded-base h-[72px] min-h-[72px] w-[72px] min-w-[72px] overflow-hidden">
             <img
               src={thumbnail}
-              alt="Thumbnail"
+              alt={t("thumbnail", "Thumbnail")}
               className="h-full w-full object-cover"
             />
           </div>

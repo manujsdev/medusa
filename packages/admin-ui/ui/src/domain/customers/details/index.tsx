@@ -126,7 +126,7 @@ const CustomerDetail = () => {
             </div>
             <div className="flex flex-col pl-6">
               <div className="inter-smaller-regular text-grey-50 mb-1">
-                {t("details-orders", "Orders")}
+                {t("orders", "Orders")}
               </div>
               <div>{customer.orders.length}</div>
             </div>
