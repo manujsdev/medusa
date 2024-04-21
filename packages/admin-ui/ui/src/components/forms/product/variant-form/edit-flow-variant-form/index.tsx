@@ -13,6 +13,7 @@ import InputField from "../../../../molecules/input"
 import { PricesFormType } from "../../../general/prices-form"
 import { nestedForm } from "../../../../../utils/nested-form"
 import { useFeatureFlag } from "../../../../../providers/feature-flag-provider"
+import { useTranslation } from "react-i18next"
 
 export type EditFlowVariantFormType = {
   /**
@@ -57,6 +58,7 @@ type Props = {
  * }
  */
 const EditFlowVariantForm = ({ form, isEdit }: Props) => {
+  const { t } = useTranslation()
   const { isFeatureEnabled } = useFeatureFlag()
   const { fields } = useFieldArray({
     control: form.control,
@@ -72,10 +74,15 @@ const EditFlowVariantForm = ({ form, isEdit }: Props) => {
           <VariantGeneralForm form={nestedForm(form, "general")} />
           <div className="mt-xlarge">
             <div className="mb-base gap-x-2xsmall flex items-center">
-              <h3 className="inter-base-semibold">Options</h3>
+              <h3 className="inter-base-semibold">
+                {t("variants-options", "Options")}
+              </h3>
               <IconTooltip
                 type="info"
-                content="Options are used to define the color, size, etc. of the variant."
+                content={t(
+                  "variants-options-tooltip",
+                  "Options are used to define the color, size, etc. of the variant."
+                )}
               />
             </div>
             <div className="gap-large pb-2xsmall grid grid-cols-2">
@@ -97,36 +104,60 @@ const EditFlowVariantForm = ({ form, isEdit }: Props) => {
         </div>
       </Accordion.Item>
       {showStockAndInventory && (
-        <Accordion.Item title="Stock & Inventory" value="stock">
+        <Accordion.Item
+          title={t(
+            "product-variants-section-edit-stock-inventory-title",
+            "Stock & Inventory"
+          )}
+          value="stock"
+        >
           <VariantStockForm form={nestedForm(form, "stock")} />
         </Accordion.Item>
       )}
-      <Accordion.Item title="Shipping" value="shipping">
-        <p className="inter-base-regular text-grey-50">
+      <Accordion.Item
+        title={t("detail-cards-shipping", "Shipping")}
+        value="shipping"
+      >
+        {/* <p className="inter-base-regular text-grey-50">
           Shipping information can be required depending on your shipping
           provider, and whether or not you are shipping internationally.
-        </p>
+        </p> */}
         <div className="mt-large">
-          <h3 className="inter-base-semibold mb-2xsmall">Dimensions</h3>
+          <h3 className="inter-base-semibold mb-2xsmall">
+            {t("new-dimensions", "Dimensions")}
+          </h3>
           <p className="inter-base-regular text-grey-50 mb-large">
-            Configure to calculate the most accurate shipping rates.
+            {t(
+              "shipping-info",
+              "Configure to calculate the most accurate shipping rates."
+            )}
           </p>
           <DimensionsForm form={nestedForm(form, "dimensions")} />
         </div>
         {showStockAndInventory && (
           <div className="mt-xlarge">
-            <h3 className="inter-base-semibold mb-2xsmall">Customs</h3>
-            <p className="inter-base-regular text-grey-50 mb-large">
-              Configure if you are shipping internationally.
-            </p>
+            <h3 className="inter-base-semibold mb-2xsmall">
+              {t("new-customs", "Customs")}
+            </h3>{" "}
+            {/* <p className="inter-base-regular text-grey-50 mb-large">
+              {t(
+                "shipping-msg",
+                "Configure if you are shipping internationally."
+              )}
+            </p> */}
             <CustomsForm form={nestedForm(form, "customs")} />
           </div>
         )}
       </Accordion.Item>
-      <Accordion.Item title="Metadata" value="metadata">
+      <Accordion.Item
+        title={t("collection-modal-metadata", "Metadata")}
+        value="metadata"
+      >
         <p className="inter-base-regular text-grey-50 mb-base">
-          Metadata can be used to store additional information about the
-          variant.
+          {t(
+            "variants-metadata-msg",
+            "Metadata can be used to store additional information about the variant."
+          )}
         </p>
         <MetadataForm form={nestedForm(form, "metadata")} />
       </Accordion.Item>

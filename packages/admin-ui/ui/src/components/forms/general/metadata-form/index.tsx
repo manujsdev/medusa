@@ -11,6 +11,7 @@ import EllipsisVerticalIcon from "../../../fundamentals/icons/ellipsis-vertical-
 import TrashIcon from "../../../fundamentals/icons/trash-icon"
 import WarningCircleIcon from "../../../fundamentals/icons/warning-circle"
 import XCircleIcon from "../../../fundamentals/icons/x-circle-icon"
+import { useTranslation } from "react-i18next"
 
 export type MetadataField = {
   key: string
@@ -29,6 +30,7 @@ type MetadataProps = {
 }
 
 const MetadataForm = ({ form }: MetadataProps) => {
+  const { t } = useTranslation()
   const { control, path, register, setValue, getValues } = form
 
   const { fields, remove, insert } = useFieldArray({
@@ -123,10 +125,10 @@ const MetadataForm = ({ form }: MetadataProps) => {
           )}
         >
           <div>
-            <p>Key</p>
+            <p>{t("variants-metadata-key", "Key")}</p>
           </div>
           <div className="">
-            <p>Value</p>
+            <p>{t("variants-metadata-value", "Value")}</p>
           </div>
         </div>
         <div className="divide-grey-20 divide-y">

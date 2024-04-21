@@ -15,6 +15,7 @@ import clsx from "clsx"
 import { sum } from "lodash"
 import { useAdminStockLocations } from "medusa-react"
 import { useFeatureFlag } from "../../../../../providers/feature-flag-provider"
+import { useTranslation } from "react-i18next"
 
 export type VariantStockFormType = {
   manage_inventory?: boolean
@@ -32,6 +33,7 @@ type Props = {
 }
 
 const VariantStockForm = ({ form }: Props) => {
+  const { t } = useTranslation()
   const layeredModalContext = React.useContext(LayeredModalContext)
 
   const { isFeatureEnabled } = useFeatureFlag()
@@ -97,18 +99,21 @@ const VariantStockForm = ({ form }: Props) => {
   return (
     <div>
       <p className="inter-base-regular text-grey-50">
-        Configure the inventory and stock for this variant.
+        {t(
+          "variants-inventory-subtitle",
+          "Configure the inventory and stock for this variant."
+        )}
       </p>
       <div className="gap-y-xlarge pt-large flex flex-col">
         <div className="gap-large grid grid-cols-2">
           <InputField
-            label="Stock keeping unit (SKU)"
+            label={t("variants-inventory-sku", "Stock keeping unit (SKU)")}
             placeholder="SUN-G, JK1234..."
             {...register(path("sku"))}
           />
           {!stockLocationEnabled && (
             <InputField
-              label="Quantity in stock"
+              label={t("variants-inventory-quantity", "Quantity in stock")}
               type="number"
               placeholder="100..."
               errors={errors}
@@ -118,22 +123,23 @@ const VariantStockForm = ({ form }: Props) => {
             />
           )}
           <InputField
-            label="EAN (Barcode)"
+            label={t("variants-inventory-ean", "EAN (Barcode)")}
             placeholder="123456789102..."
             {...register(path("ean"))}
           />
           <InputField
-            label="UPC (Barcode)"
+            label={t("variants-inventory-upc", "UPC (Barcode)")}
             placeholder="023456789104..."
             {...register(path("upc"))}
           />
           <InputField
-            label="Barcode"
+            label={t("variants-inventory-barcode", "Barcode")}
             placeholder="123456789104..."
             {...register(path("barcode"))}
           />
         </div>
-        <div className="gap-y-2xsmall flex flex-col">
+        {/* TODO: Hidden the Manage inventory section */}
+        {/* <div className="gap-y-2xsmall flex flex-col">
           <div className="flex items-center justify-between">
             <h3 className="inter-base-semibold mb-2xsmall">Manage inventory</h3>
             <Controller
@@ -145,11 +151,11 @@ const VariantStockForm = ({ form }: Props) => {
             />
           </div>
           <p className="inter-base-regular text-grey-50">
-            When checked Medusa will regulate the inventory when orders and
+            When checked MKT will regulate the inventory when orders and
             returns are made.
           </p>
-        </div>
-        <div className="gap-y-2xsmall flex flex-col">
+        </div> */}
+        {/* <div className="gap-y-2xsmall flex flex-col">
           <div className="flex items-center justify-between">
             <h3 className="inter-base-semibold mb-2xsmall">Allow backorders</h3>
             <Controller
@@ -164,7 +170,7 @@ const VariantStockForm = ({ form }: Props) => {
             When checked the product will be available for purchase despite the
             product being sold out
           </p>
-        </div>
+        </div> */}
         <FeatureToggle featureFlag="inventoryService">
           <div
             className={clsx({
