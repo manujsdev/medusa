@@ -25,7 +25,9 @@ const DiscountableForm = ({ form, isGiftCard }: Props) => {
           control={control}
           name={path("value")}
           render={({ field: { value, onChange } }) => {
-            return <Switch checked={value} onCheckedChange={onChange} />
+            return (
+              <Switch checked={value} onCheckedChange={onChange} disabled />
+            )
           }}
         />
       </div>

@@ -25,6 +25,7 @@ import DeletePrompt from "../../delete-prompt"
 import EditPricesActions from "./edit-prices-actions"
 import EditPricesTable from "./edit-prices-table"
 import SavePrompt from "./save-prompt"
+import { useTranslation } from "react-i18next"
 
 type EditPricesModalProps = {
   close: () => void
@@ -35,7 +36,7 @@ type EditPricesModalProps = {
  * Return map of regionIds <> currency_codes
  */
 function useRegionsCurrencyMap() {
-  const map = {}
+  const map: any = {}
   const { regions: storeRegions } = useAdminRegions({
     limit: 1000,
   })
@@ -51,6 +52,7 @@ function useRegionsCurrencyMap() {
  * Edit prices modal container.
  */
 function EditPricesModal(props: EditPricesModalProps) {
+  const { t } = useTranslation()
   const editedPrices = useRef({})
 
   const { regions: storeRegions } = useAdminRegions({
@@ -336,7 +338,7 @@ function EditPricesModal(props: EditPricesModalProps) {
                 onClick={props.close}
                 className="text-black-800  cursor-pointer border p-1.5 font-medium"
               >
-                Discard
+                {t("discard")}
               </Button>
               <Button
                 variant="ghost"
@@ -344,7 +346,7 @@ function EditPricesModal(props: EditPricesModalProps) {
                 onClick={onSave}
                 className="cursor-pointer border bg-black p-1.5 font-medium text-white hover:bg-black"
               >
-                Save and close
+                {t("edit-save-and-close")}
               </Button>
             </div>
           </div>
@@ -367,9 +369,9 @@ function EditPricesModal(props: EditPricesModalProps) {
           handleClose={() => setShowCloseConfirmationPrompt(false)}
           onDelete={async () => props.close()}
           successText={""}
-          confirmText="Yes, close"
-          heading="Close"
-          text="Are you sure you want to close this editor without saving?"
+          confirmText={t("yesClose")}
+          heading={t("edit-condition-close")}
+          text={t("are-you-sure-you-want-to-close-this-editor-without-saving")}
         />
       )}
       {showSaveConfirmationPrompt && (

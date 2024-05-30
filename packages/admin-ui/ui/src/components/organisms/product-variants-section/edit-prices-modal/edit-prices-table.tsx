@@ -13,6 +13,7 @@ import {
   isText,
   mod,
 } from "./utils"
+import { useTranslation } from "react-i18next"
 
 enum ArrowMove {
   UP,
@@ -72,6 +73,7 @@ function getKey(variantId: string, currencyCode?: string, regionId?: string) {
  * Edit prices table component.
  */
 function EditPricesTable(props: EditPricesTableProps) {
+  const { t } = useTranslation()
   const { store } = useAdminStore()
   const storeCurrencies = store?.currencies
   const { regions: storeRegions } = useAdminRegions({
@@ -685,7 +687,7 @@ function EditPricesTable(props: EditPricesTableProps) {
             className="tw-text-medusa-text-subtle h-10 text-left font-normal"
           >
             <th className="h-2 border border-t-0 pl-4 font-medium text-gray-400">
-              Product
+              {t("product-general-section-product")}
             </th>
             {props.currencies.map((c) => {
               const currency = storeCurrencies?.find((sc) => sc.code === c)
@@ -695,9 +697,14 @@ function EditPricesTable(props: EditPricesTableProps) {
                   className="min-w-[220px] border border-t-0 px-4 font-medium text-gray-400"
                 >
                   <div className="flex items-center justify-between">
-                    <span>Price {c.toUpperCase()}</span>
+                    <span>
+                      {t("add-additional-items-screen-price")} {c.toUpperCase()}
+                    </span>
                     {currency?.includes_tax && (
-                      <Tooltip content="Tax inclusive pricing" side="bottom">
+                      <Tooltip
+                        content={t("tax-inclusive-pricing")}
+                        side="bottom"
+                      >
                         <IconBuildingTax strokeWidth={1.3} size={20} />
                       </Tooltip>
                     )}
@@ -718,12 +725,15 @@ function EditPricesTable(props: EditPricesTableProps) {
                   <div className="flex items-center justify-between gap-2">
                     <span className="flex overflow-hidden">
                       <span title={region?.name} className="truncate pr-1">
-                        Price {region?.name}
+                        {t("add-additional-items-screen-price")} {region?.name}
                       </span>
                       ({region?.currency_code.toUpperCase()})
                     </span>
                     {region.includes_tax && (
-                      <Tooltip content="Tax inclusive pricing" side="bottom">
+                      <Tooltip
+                        content={t("tax-inclusive-pricing")}
+                        side="bottom"
+                      >
                         <IconBuildingTax strokeWidth={1.3} size={20} />
                       </Tooltip>
                     )}

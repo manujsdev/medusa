@@ -140,10 +140,10 @@ const ProductDetails = ({ product }: Props) => {
       </h2>
       <Detail title={t("subtitle", "Subtitle")} value={product.subtitle} />
       <Detail title={t("handle", "Handle")} value={product.handle} />
-      <Detail
+      {/* <Detail
         title={t("product-general-section-type", "Type")}
         value={product.type?.value}
-      />
+      /> */}
       <Detail
         title={t("product-general-section-collection", "Collection")}
         value={product.collection?.title}

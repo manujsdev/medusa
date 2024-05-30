@@ -69,6 +69,8 @@ const ProductVariantsSection = ({ product }: Props) => {
     toggle: toggleEditPrices,
   } = useToggleState()
 
+  console.log("showEditPrices: ", showEditPrices)
+
   const actions: ActionType[] = [
     {
       label: t("product-variants-section-add-variant", "Add Variant"),
@@ -78,6 +80,7 @@ const ProductVariantsSection = ({ product }: Props) => {
     {
       label: t("product-variants-section-edit-prices", "Edit Prices"),
       onClick: toggleEditPrices,
+      // onClick: () => console.log("clic prices"),
       icon: <DollarSignIcon size="20" />,
     },
     {
