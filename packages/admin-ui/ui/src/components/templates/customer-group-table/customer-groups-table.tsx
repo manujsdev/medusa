@@ -39,7 +39,7 @@ const defaultQueryProps = {
 function CustomerGroupsPlaceholder() {
   return (
     <div className="center flex h-full min-h-[756px] items-center justify-center">
-      <span className="text-xs text-gray-400">No customer groups yet</span>
+      <span className="text-xs text-gray-400">No tienes creado grupos</span>
     </div>
   )
 }

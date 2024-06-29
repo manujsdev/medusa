@@ -24,7 +24,10 @@ const GeneralForm = ({ form, requireHandle = true, isGiftCard }: Props) => {
     register,
     path,
     formState: { errors },
+    getValues,
   } = form
+
+  console.log("the form: ", getValues())
 
   return (
     <div>

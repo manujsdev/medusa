@@ -92,11 +92,11 @@ const useProductTableColumn = ({ setTileView, setListView, showList }) => {
         accessor: "status",
         Cell: ({ cell: { value } }) => getProductStatus(value),
       },
-      {
-        Header: t("product-table-availability", "Availability"),
-        accessor: "sales_channels",
-        Cell: ({ cell: { value } }) => getProductSalesChannels(value),
-      },
+      // {
+      //   Header: t("product-table-availability", "Availability"),
+      //   accessor: "sales_channels",
+      //   Cell: ({ cell: { value } }) => getProductSalesChannels(value),
+      // },
       {
         Header: t("product-table-inventory", "Inventory"),
         accessor: "variants",

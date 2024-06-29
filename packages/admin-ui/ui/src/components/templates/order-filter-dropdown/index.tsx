@@ -145,7 +145,8 @@ const OrderFilters = ({
 
   return (
     <div className="flex space-x-1">
-      <FilterDropdownContainer
+      {/* TODO: hidden order filters */}
+      {/* <FilterDropdownContainer
         submitFilters={onSubmit}
         clearFilters={onClear}
         triggerElement={
@@ -244,9 +245,11 @@ const OrderFilters = ({
           name={name}
           setName={setName}
         />
-      </FilterDropdownContainer>
+      </FilterDropdownContainer> */}
+      {/* TODO: added the onClear filter*/}
+      <TabFilter key={"all"} onClick={onClear} label="Todos" />
       {tabs &&
-        tabs.map((t) => (
+        tabs.map((t: any) => (
           <TabFilter
             key={t.value}
             onClick={() => handleTabClick(t.value)}

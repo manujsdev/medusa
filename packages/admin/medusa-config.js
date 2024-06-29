@@ -1,36 +1,38 @@
-const dotenv = require('dotenv');
+const dotenv = require("dotenv")
 
-let ENV_FILE_NAME = '';
+let ENV_FILE_NAME = ""
 switch (process.env.NODE_ENV) {
-  case 'production':
-    ENV_FILE_NAME = '.env.production';
-    break;
-  case 'staging':
-    ENV_FILE_NAME = '.env.staging';
-    break;
-  case 'test':
-    ENV_FILE_NAME = '.env.test';
-    break;
-  case 'development':
+  case "production":
+    ENV_FILE_NAME = ".env.production"
+    break
+  case "staging":
+    ENV_FILE_NAME = ".env.staging"
+    break
+  case "test":
+    ENV_FILE_NAME = ".env.test"
+    break
+  case "development":
   default:
-    ENV_FILE_NAME = '.env';
-    break;
+    ENV_FILE_NAME = ".env"
+    break
 }
 
 try {
-  dotenv.config({ path: process.cwd() + '/' + ENV_FILE_NAME });
+  dotenv.config({ path: process.cwd() + "/" + ENV_FILE_NAME })
 } catch (e) {}
 
 // CORS when consuming Medusa from admin
 const ADMIN_CORS =
-  process.env.ADMIN_CORS || 'http://localhost:7003,http://localhost:7001,http://mkttienda-dev.com,http://adminmkt.com';
+  process.env.ADMIN_CORS ||
+  "http://localhost:7000,http://localhost:7001,http://mkttienda-dev.com,http://adminmkt.com"
 
 // CORS to avoid issues when consuming Medusa from a client
-const STORE_CORS = process.env.STORE_CORS || 'http://localhost:8000';
+const STORE_CORS = process.env.STORE_CORS || "http://localhost:8000"
 
-const DATABASE_URL = process.env.DATABASE_URL || 'postgres://localhost/medusa-starter-default';
+const DATABASE_URL =
+  process.env.DATABASE_URL || "postgres://localhost/medusa-starter-default"
 
-const REDIS_URL = process.env.REDIS_URL || 'redis://localhost:6379';
+const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379"
 
 const plugins = [
   `medusa-fulfillment-manual`,
@@ -42,25 +44,25 @@ const plugins = [
       bucket: process.env.MINIO_BUCKET,
       private_bucket: process.env.MINIO_BUCKET,
       access_key_id: process.env.MINIO_ROOT_USER,
-      secret_access_key: process.env.MINIO_ROOT_PASSWORD
-    }
+      secret_access_key: process.env.MINIO_ROOT_PASSWORD,
+    },
   },
+  // {
+  //   resolve: '@medusajs/admin',
+  //   /** @type {import('@medusajs/admin').PluginOptions} */
+  //   options: {
+  //     autoRebuild: true,
+  //     develop: {
+  //       open: process.env.OPEN_BROWSER !== 'false'
+  //     }
+  //   }
+  // },
   {
-    resolve: '@medusajs/admin',
-    /** @type {import('@medusajs/admin').PluginOptions} */
+    resolve: "medusa-payment-stripe",
     options: {
-      autoRebuild: true,
-      develop: {
-        open: process.env.OPEN_BROWSER !== 'false'
-      }
-    }
-  },
-  {
-    resolve: 'medusa-payment-stripe',
-    options: {
-      api_key: process.env.STRIPE_API_KEY
+      api_key: process.env.STRIPE_API_KEY,
       // webhook_secret: process.env.STRIPE_WEBHOOK_SECRET,
-    }
+    },
   },
   {
     resolve: `medusa-plugin-meilisearch`,
@@ -69,39 +71,70 @@ const plugins = [
       // of the MeiliSearch client
       config: {
         host: process.env.MEILISEARCH_HOST,
-        apiKey: process.env.MEILISEARCH_API_KEY
+        apiKey: process.env.MEILISEARCH_API_KEY,
       },
       settings: {
         products: {
           indexSettings: {
-            searchableAttributes: ['title', 'description', 'variant_sku'],
-            displayedAttributes: ['id', 'title', 'description', 'variant_sku', 'thumbnail', 'handle']
+            searchableAttributes: [
+              "title",
+              "description",
+              "handle",
+              "variant_sku",
+              "tags",
+            ],
+            displayedAttributes: [
+              "id",
+              "title",
+              "description",
+              "handle",
+              "status",
+              "thumbnail",
+              "collection",
+              "variant_sku",
+              "tags",
+            ],
           },
-          primaryKey: 'id',
-          transform: product => ({
-            id: product.id
+          primaryKey: "id",
+          transform: (product) => ({
+            id: product.id,
             // other attributes...
-          })
-        }
-      }
-    }
-  }
-];
+          }),
+        },
+      },
+    },
+  },
+  // TODO: Waiting for an account created outside (not Cuban account), my account is blocked by Office of Foreign Assets Control (OFAC) sanction list
+  // {
+  //   resolve: `medusa-plugin-sendgrid`,
+  //   options: {
+  //     api_key: process.env.SENDGRID_API_KEY,
+  //     from: process.env.SENDGRID_FROM,
+  //     order_placed_template: process.env.SENDGRID_ORDER_PLACED_ID
+  //     // localization: {
+  //     //   "de-DE": { // locale key
+  //     //     order_placed_template:
+  //     //       process.env.SENDGRID_ORDER_PLACED_ID_LOCALIZED,
+  //     //   },
+  //     // },
+  //   }
+  // }
+]
 
 const modules = {
   eventBus: {
-    resolve: '@medusajs/event-bus-redis',
+    resolve: "@medusajs/event-bus-redis",
     options: {
-      redisUrl: REDIS_URL
-    }
+      redisUrl: REDIS_URL,
+    },
   },
   cacheService: {
-    resolve: '@medusajs/cache-redis',
+    resolve: "@medusajs/cache-redis",
     options: {
-      redisUrl: REDIS_URL
-    }
-  }
-};
+      redisUrl: REDIS_URL,
+    },
+  },
+}
 
 /** @type {import('@medusajs/medusa').ConfigModule["projectConfig"]} */
 const projectConfig = {
@@ -110,12 +143,12 @@ const projectConfig = {
   store_cors: STORE_CORS,
   database_url: DATABASE_URL,
   admin_cors: ADMIN_CORS,
-  redis_url: REDIS_URL
-};
+  redis_url: REDIS_URL,
+}
 
 /** @type {import('@medusajs/medusa').ConfigModule} */
 module.exports = {
   projectConfig,
   plugins,
-  modules
-};
+  modules,
+}

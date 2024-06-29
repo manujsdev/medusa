@@ -292,14 +292,14 @@ function EditPricesModal(props: EditPricesModalProps) {
     Promise.all(promises)
       .then(() => {
         notification(
-          "Success",
-          "Successfully updated variant prices",
+          t("settings-success"),
+          t("save-edited-variant-prices-msg"),
           "success"
         )
         props.close()
       })
       .catch((e) => {
-        notification("Error", "Failed to update variant prices", "error")
+        notification("Error", t("save-edited-variant-prices-error"), "error")
       })
   }
 

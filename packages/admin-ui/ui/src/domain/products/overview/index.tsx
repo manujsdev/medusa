@@ -72,7 +72,8 @@ const Overview = () => {
       case "products":
         return (
           <div className="flex space-x-2">
-            <Button
+            {/* TODO: Hidden the import and export products */}
+            {/* <Button
               variant="secondary"
               size="small"
               onClick={() => openImportModal()}
@@ -87,7 +88,7 @@ const Overview = () => {
             >
               <ExportIcon size={20} />
               {t("overview-export-products", "Export Products")}
-            </Button>
+            </Button> */}
             <Button
               variant="secondary"
               size="small"

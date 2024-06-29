@@ -105,7 +105,7 @@ const ProductsFilter = ({
 
   return (
     <div className="flex space-x-1">
-      <FilterDropdownContainer
+      {/* <FilterDropdownContainer
         submitFilters={onSubmit}
         clearFilters={onClear}
         triggerElement={
@@ -225,7 +225,8 @@ const ProductsFilter = ({
           name={name}
           setName={setName}
         />
-      </FilterDropdownContainer>
+      </FilterDropdownContainer> */}
+      <TabFilter key={"all"} onClick={onClear} label="Todos" />
       {tabs &&
         tabs.map((t) => (
           <TabFilter

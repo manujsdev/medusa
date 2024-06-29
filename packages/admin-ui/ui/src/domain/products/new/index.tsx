@@ -81,8 +81,16 @@ const NewProduct = ({ onClose }: Props) => {
   const {
     handleSubmit,
     formState: { isDirty },
+    getValues,
     reset,
   } = form
+
+  const disableSaveButton =
+    !getValues().general.title &&
+    !getValues().media.images.length &&
+    !getValues().thumbnail.images.length
+
+  console.log("formState: ", getValues().media.images)
 
   const closeAndReset = () => {
     reset(createBlank())
@@ -261,7 +269,7 @@ const NewProduct = ({ onClose }: Props) => {
                 size="small"
                 variant="primary"
                 type="button"
-                disabled={!isDirty}
+                disabled={disableSaveButton}
                 onClick={onSubmit(true)}
               >
                 {t("new-publish-product", "Publish product")}
@@ -310,13 +318,14 @@ const NewProduct = ({ onClose }: Props) => {
                       {t("new-organize-product", "Organize Product")}
                     </h3>
                     <OrganizeForm form={nestedForm(form, "organize")} />
-                    <FeatureToggle featureFlag="sales_channels">
+                    {/* TODO: Hidden the sales channel config */}
+                    {/* <FeatureToggle featureFlag="sales_channels">
                       <div className="mt-xlarge">
                         <AddSalesChannelsForm
                           form={nestedForm(form, "salesChannels")}
                         />
                       </div>
-                    </FeatureToggle>
+                    </FeatureToggle> */}
                   </div>
                 </div>
               </Accordion.Item>

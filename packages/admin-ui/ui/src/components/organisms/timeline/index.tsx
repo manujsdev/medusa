@@ -128,13 +128,14 @@ const Timeline: React.FC<TimelineProps> = ({ orderId }) => {
             <h3 className="inter-xlarge-semibold">
               {t("timeline-timeline", "Timeline")}
             </h3>
-            <div
+            {/* TODO: Hidden the return products actions */}
+            {/* <div
               className={clsx({
                 "pointer-events-none opacity-50": !events,
               })}
             >
               <Actionables actions={actions} />
-            </div>
+            </div> */}
           </div>
           <div
             className={clsx("mt-base", {
