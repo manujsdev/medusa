@@ -47,16 +47,16 @@ const plugins = [
       secret_access_key: process.env.MINIO_ROOT_PASSWORD,
     },
   },
-  // {
-  //   resolve: '@medusajs/admin',
-  //   /** @type {import('@medusajs/admin').PluginOptions} */
-  //   options: {
-  //     autoRebuild: true,
-  //     develop: {
-  //       open: process.env.OPEN_BROWSER !== 'false'
-  //     }
-  //   }
-  // },
+  {
+    resolve: "@medusajs/admin",
+    /** @type {import('@medusajs/admin').PluginOptions} */
+    options: {
+      autoRebuild: true,
+      develop: {
+        open: process.env.OPEN_BROWSER !== "false",
+      },
+    },
+  },
   {
     resolve: "medusa-payment-stripe",
     options: {
